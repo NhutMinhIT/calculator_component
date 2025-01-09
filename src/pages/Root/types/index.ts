@@ -21,12 +21,24 @@ export enum ECalendarDialogTransition {
 }
 
 export interface IUseCalendar {
+    tempDate: Date | null
+    selectedDate: Date | null
     isOpenCalendarDialog: boolean
     handleOpenCalendarDialog: () => void
     handleCloseCalendarDialog: () => void
+    handleDateTemp: (date: Date | null) => void
+    handleConfirmDate: () => void
 }
 
 export type TCalendarDialogProps = {
+    tempDate: Date | null
+    onConfirm: () => void
     isOpen: boolean;
     onClose: () => void;
+    onDateChangeTemp: (date: Date | null) => void;
+}
+
+export type TStyledComponentsProps = {
+    value: Date | null;
+    onChangeDate: (date: Date | null) => void;
 }
