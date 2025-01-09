@@ -1,8 +1,16 @@
 import React, { FC, memo } from 'react'
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material'
+import { Button, Dialog, DialogActions, DialogContent } from '@mui/material'
 import TransitionDialog from '../Transition/TransitionDialog'
 import { ECalendarButtonVariant, ECalenderButtonColor, TCalendarDialogProps } from '../../types'
 import { CALENDAR_DIALOG_CANCEL_BUTTON_TEXT, CALENDAR_DIALOG_CONFIRM_BUTTON_TEXT, CALENDAR_DIALOG_ID } from '../../constant'
+import CustomizeCalendar from '../Customize/CustomizeCalendar'
+import styled from '../../styles/style.module.css'
+
+const renderCalendar = (): JSX.Element => {
+    return (
+        <CustomizeCalendar />
+    )
+}
 
 const CalendarDialog: FC<TCalendarDialogProps> = ({
     isOpen,
@@ -17,16 +25,16 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
             onClose={onClose}
             aria-describedby={CALENDAR_DIALOG_ID}
         >
-            <DialogTitle>
-
-            </DialogTitle>
             <DialogContent>
+                {renderCalendar()}
             </DialogContent>
+
             <DialogActions>
                 <Button
                     variant={ECalendarButtonVariant.CONTAINED}
-                    color={ECalenderButtonColor.ERROR}
+                    color={ECalenderButtonColor.PRIMARY}
                     onClick={onClose}
+                    className={styled.btnActionCalendar}
                 >
                     {CALENDAR_DIALOG_CONFIRM_BUTTON_TEXT}
                 </Button>
@@ -34,6 +42,7 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
                     variant={ECalendarButtonVariant.CONTAINED}
                     color={ECalenderButtonColor.PRIMARY}
                     onClick={onClose}
+                    className={styled.btnActionCalendar}
                 >
                     {CALENDAR_DIALOG_CANCEL_BUTTON_TEXT}
                 </Button>
