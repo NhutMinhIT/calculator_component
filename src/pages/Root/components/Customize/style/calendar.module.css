@@ -19,10 +19,3 @@
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
 }
-
-.iconNextMonth, .iconPrevMonth {
-    border: 1px solid gray;
-    border-radius: 0.2rem;
-    color: black;
-    background-color: rgba(236, 234, 234, 0.5);
-}

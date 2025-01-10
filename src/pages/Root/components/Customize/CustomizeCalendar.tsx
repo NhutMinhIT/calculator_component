@@ -22,8 +22,10 @@ import { Dayjs } from "dayjs";
 import {
     Box,
     IconButton,
-    Stack
+    Stack,
+    Typography
 } from "@mui/material";
+import CustomizedButtonIcon from "./CustomizedIconButton";
 
 const CustomizeCalendar = styled(DateCalendar)`   
 
@@ -92,22 +94,24 @@ const StyledComponents: FC<TStyledComponentsProps> = ({ value, onChangeDate, ren
 
         return (
             <Box className={styles.boxHeaderCalendar}>
-                <Stack>
-                    <IconButton onClick={selectPreviousMonth} className={styles.iconPrevMonth}>
-                        <SkipPrevious />
-                    </IconButton>
-                </Stack>
-                <span
+                <CustomizedButtonIcon
+                    onClick={selectPreviousMonth}
+                >
+                    <SkipPrevious />
+                </CustomizedButtonIcon>
+
+                <Typography
                     className={styles.textHeaderCalendar}
                 >
                     {currentMonth.format(CALENDAR_HEADER_FORMAT)}
-                </span>
+                </Typography>
 
-                <Stack>
-                    <IconButton onClick={selectNextMonth} className={styles.iconNextMonth}>
-                        <SkipNext />
-                    </IconButton>
-                </Stack>
+                <CustomizedButtonIcon
+                    onClick={selectNextMonth}
+                >
+                    <SkipNext />
+                </CustomizedButtonIcon>
+
                 {renderButtonToday()}
             </Box>
         )
