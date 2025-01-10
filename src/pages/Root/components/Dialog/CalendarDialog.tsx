@@ -1,8 +1,22 @@
 import React, { FC, memo } from "react";
-import { Button, Dialog, DialogActions, DialogContent } from "@mui/material";
+import {
+    Button,
+    Dialog,
+    DialogActions,
+    DialogContent
+} from "@mui/material";
 import TransitionDialog from "../Transition/TransitionDialog";
-import { ECalendarButtonVariant, ECalenderButtonColor, TCalendarDialogProps } from "../../types";
-import { CALENDAR_DIALOG_CANCEL_BUTTON_TEXT, CALENDAR_DIALOG_CONFIRM_BUTTON_TEXT, CALENDAR_DIALOG_ID, CALENDAR_DIALOG_TODAY_BUTTON_TEXT } from "../../constant";
+import {
+    ECalendarButtonVariant,
+    ECalenderButtonColor,
+    TCalendarDialogProps
+} from "../../types";
+import {
+    CALENDAR_DIALOG_CANCEL_BUTTON_TEXT,
+    CALENDAR_DIALOG_CONFIRM_BUTTON_TEXT,
+    CALENDAR_DIALOG_ID,
+    CALENDAR_DIALOG_TODAY_BUTTON_TEXT
+} from "../../constant";
 import CustomizeCalendar from "../Customize/CustomizeCalendar";
 import styles from "../../styles/style.module.css";
 import { useHandleDateSelect } from "../../utils/datePicker";
