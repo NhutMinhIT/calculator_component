@@ -9,7 +9,10 @@ const CustomizedTodayButton = styled(Button)
     &.css-1588512-MuiButtonBase-root-MuiButton-root{
         border: 1px solid gray;
         border-radius: 0.2rem;
-        color: black;
+        color: #333333;
+        font-weight: 300;
+        font-size: 0.8rem;
+        padding: 0.55rem 0.5rem;
         background-color: rgba(236, 234, 234, 0.5);
         text-align: center;
         text-transform: capitalize;
