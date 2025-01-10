@@ -1,60 +1,25 @@
 import { styled } from "@mui/material/styles";
-import { DateCalendar, LocalizationProvider } from "@mui/x-date-pickers";
+import { DateCalendar, LocalizationProvider, PickersCalendarHeaderProps } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { FC, memo } from "react";
 import { dayOfWeekFormatter, shouldDisableMonth } from "../../utils/datePicker";
 import { TStyledComponentsProps } from "../../types";
-import { Button } from "@mui/material";
-import { FIXED_WEEK_NUMBER } from "../../constant";
+import { CALENDAR_FIXED_WEEK_NUMBER } from "../../constant";
+import { SkipNext, SkipPrevious } from "@mui/icons-material";
+import { Dayjs } from "dayjs";
+import { Box, IconButton, Stack } from "@mui/material";
+import styles from './style/calendar.module.css'
 
-const CustomizeCalendar = styled(DateCalendar)`
-    .css-iupya1-MuiButtonBase-root-MuiIconButton-root-MuiPickersCalendarHeader-switchViewButton {
-        display: none;
-    }
-
-    .css-1nxbkmn-MuiPickersCalendarHeader-root {
-        position: relative;   
-        width: auto;
-        margin: 1rem 0;
-    }
-
-    .css-cyfsxc-MuiPickersCalendarHeader-labelContainer {
-        font-size: 1.5rem;
-        position: absolute;
-        right: 0;
-        left: 0;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .MuiPickersCalendarHeader-root .MuiPickersArrowSwitcher-previousIconButton {
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 1rem;
-        background-color: rgb(216, 215, 215, 0.6);
-        border: 1px solid #000;
-        border-radius: 0.5rem;
-    }
-        
-    .MuiPickersCalendarHeader-root .MuiPickersArrowSwitcher-nextIconButton {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 0.8rem;
-        background-color: rgb(216, 215, 215, 0.6);
-        border: 1px solid #000;
-        border-radius: 0.5rem;
-    }  
+const CustomizeCalendar = styled(DateCalendar)`   
 
     .MuiDayCalendar-header {
         display: flex;
         justify-content: space-between;
         width: 100%;
+    }   
+    .css-17f9e7e-MuiTypography-root-MuiDayCalendar-weekDayLabel{
+        font-weight: 600;
     }
-   
 
     .MuiDayCalendar-weekContainer {
         display: flex;
@@ -63,11 +28,14 @@ const CustomizeCalendar = styled(DateCalendar)`
 
     .css-4k4mmf-MuiButtonBase-root-MuiPickersDay-root {
         border-radius: 0.5rem;   
+        font-weight: 600;
     } 
+        
     .css-4k4mmf-MuiButtonBase-root-MuiPickersDay-root:hover{
           background-color: #1565c0;
           border-radius: 0.5rem;
           color:white;
+          font-weight: 700;
     }
 
     .css-qct7wd-MuiButtonBase-root-MuiPickersDay-root:not(.Mui-selected) {
@@ -77,6 +45,7 @@ const CustomizeCalendar = styled(DateCalendar)`
     .css-qct7wd-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
         background-color: #1565c0;
         border-radius: 0.5rem;
+        
     }
     
     .css-1fx2l1t-MuiButtonBase-root-MuiPickersDay-root.Mui-selected, .css-1fx2l1t-MuiButtonBase-root-MuiPickersDay-root:hover{
@@ -94,13 +63,42 @@ const CustomizeCalendar = styled(DateCalendar)`
     .css-9mtva2-MuiButtonBase-root-MuiPickersDay-root:not(.Mui-selected){
         border-radius: 0.5rem;
     }  
-
 `
-// const refeshToday = () => {
+const CALENDER_VALUE_MONTH_NUMBER: number = 1
+const CALENDAR_HEADER_FORMAT: string = 'MMM YYYY'
 
-// }
+const StyledComponents: FC<TStyledComponentsProps> = ({ value, onChangeDate, renderButtonToday, ...props }) => {
+    const renderCustomeHeader = (props: PickersCalendarHeaderProps<Dayjs>) => {
+        const { currentMonth, onMonthChange } = props;
 
-const StyledComponents: FC<TStyledComponentsProps> = ({ value, onChangeDate, ...props }) => {
+        const selectNextMonth = (): void => onMonthChange(currentMonth.add(CALENDER_VALUE_MONTH_NUMBER, 'month'), 'left');
+        const selectPreviousMonth = (): void =>
+            onMonthChange(currentMonth.subtract(CALENDER_VALUE_MONTH_NUMBER, 'month'), 'right');
+
+        return (
+            <Box className={styles.boxHeaderCalendar}>
+                <Stack>
+                    <IconButton onClick={selectPreviousMonth} className={styles.iconPrevMonth}>
+                        <SkipPrevious />
+                    </IconButton>
+                </Stack>
+                <span
+                    className={styles.textHeaderCalendar}
+                >
+                    {currentMonth.format(CALENDAR_HEADER_FORMAT)}
+                </span>
+
+                <Stack>
+                    <IconButton onClick={selectNextMonth} className={styles.iconNextMonth}>
+                        <SkipNext />
+                    </IconButton>
+                </Stack>
+                {renderButtonToday()}
+            </Box>
+        )
+    }
+
+
     return (
         <LocalizationProvider
             dateAdapter={AdapterDayjs}
@@ -108,10 +106,13 @@ const StyledComponents: FC<TStyledComponentsProps> = ({ value, onChangeDate, ...
             <CustomizeCalendar
                 {...props}
                 showDaysOutsideCurrentMonth
-                fixedWeekNumber={FIXED_WEEK_NUMBER}
+                fixedWeekNumber={CALENDAR_FIXED_WEEK_NUMBER}
                 dayOfWeekFormatter={dayOfWeekFormatter}
                 shouldDisableMonth={shouldDisableMonth}
                 onChange={onChangeDate}
+                slots={{
+                    calendarHeader: renderCustomeHeader
+                }}
             />
         </LocalizationProvider>
     )

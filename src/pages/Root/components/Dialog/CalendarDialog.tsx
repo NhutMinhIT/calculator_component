@@ -2,9 +2,9 @@ import React, { FC, memo } from "react";
 import { Button, Dialog, DialogActions, DialogContent } from "@mui/material";
 import TransitionDialog from "../Transition/TransitionDialog";
 import { ECalendarButtonVariant, ECalenderButtonColor, TCalendarDialogProps } from "../../types";
-import { CALENDAR_DIALOG_CANCEL_BUTTON_TEXT, CALENDAR_DIALOG_CONFIRM_BUTTON_TEXT, CALENDAR_DIALOG_ID } from "../../constant";
+import { CALENDAR_DIALOG_CANCEL_BUTTON_TEXT, CALENDAR_DIALOG_CONFIRM_BUTTON_TEXT, CALENDAR_DIALOG_ID, CALENDAR_DIALOG_TODAY_BUTTON_TEXT } from "../../constant";
 import CustomizeCalendar from "../Customize/CustomizeCalendar";
-import styled from "../../styles/style.module.css";
+import styles from "../../styles/style.module.css";
 import { useHandleDateSelect } from "../../utils/datePicker";
 
 const CalendarDialog: FC<TCalendarDialogProps> = ({
@@ -16,7 +16,16 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
     onRefeshToday,
 }) => {
     const handleDateSelect = useHandleDateSelect(onDateChangeTemp);
-
+    const renderButtonToday = (): JSX.Element => {
+        return (
+            <Button
+                onClick={(): void => onRefeshToday(new Date())}
+                className={styles.btnActionToday}
+            >
+                {CALENDAR_DIALOG_TODAY_BUTTON_TEXT}
+            </Button>
+        )
+    }
     return (
         <Dialog
             open={isOpen}
@@ -29,6 +38,7 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
                 <CustomizeCalendar
                     value={tempDate}
                     onChangeDate={handleDateSelect}
+                    renderButtonToday={renderButtonToday}
                 />
             </DialogContent>
 
@@ -36,26 +46,19 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
                 <Button
                     variant={ECalendarButtonVariant.CONTAINED}
                     color={ECalenderButtonColor.PRIMARY}
-                    onClick={onConfirm}
-                    className={styled.btnActionCalendar}
-                >
-                    {CALENDAR_DIALOG_CONFIRM_BUTTON_TEXT}
-                </Button>
-                <Button
-                    variant={ECalendarButtonVariant.CONTAINED}
-                    color={ECalenderButtonColor.PRIMARY}
                     onClick={onClose}
-                    className={styled.btnActionCalendar}
+
+                    className={styles.btnActionCalendar}
                 >
                     {CALENDAR_DIALOG_CANCEL_BUTTON_TEXT}
                 </Button>
                 <Button
                     variant={ECalendarButtonVariant.CONTAINED}
                     color={ECalenderButtonColor.PRIMARY}
-                    className={styled.btnActionCalendar}
-                    onClick={(): void => onRefeshToday(new Date())}
+                    onClick={onConfirm}
+                    className={styles.btnActionCalendar}
                 >
-                    Today
+                    {CALENDAR_DIALOG_CONFIRM_BUTTON_TEXT}
                 </Button>
             </DialogActions>
         </Dialog>

@@ -33,6 +33,7 @@ export type TUseCalendar = {
 export type TStyledComponentsProps = {
     value: Date | null;
     onChangeDate: (date: Date | null) => void;
+    renderButtonToday: () => JSX.Element;
 }
 
 export type TCalendarDialogProps = {

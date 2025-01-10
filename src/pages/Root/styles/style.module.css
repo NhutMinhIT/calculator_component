@@ -8,4 +8,16 @@
 .btnActionCalendar {
     width: auto;
     min-width: 6rem !important;
+    text-align: center;
+    text-transform: capitalize !important;
+    font-weight: 700;
+}
+
+.btnActionToday {
+    border: 1px solid gray;
+    border-radius: 0.2rem;
+    color: black;
+    background-color: rgba(236, 234, 234, 0.5);
+    text-align: center;
+    text-transform: capitalize;
 }
