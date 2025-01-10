@@ -20,14 +20,19 @@ export enum ECalendarDialogTransition {
     RIGHT = 'right',
 }
 
-export interface IUseCalendar {
+export type TUseCalendar = {
     tempDate: Date | null
     selectedDate: Date | null
     isOpenCalendarDialog: boolean
     handleOpenCalendarDialog: () => void
     handleCloseCalendarDialog: () => void
     handleDateTemp: (date: Date | null) => void
-    handleConfirmDate: () => void
+    handleConfirmDate: (type: string) => void
+}
+
+export type TStyledComponentsProps = {
+    value: Date | null;
+    onChangeDate: (date: Date | null) => void;
 }
 
 export type TCalendarDialogProps = {
@@ -36,9 +41,12 @@ export type TCalendarDialogProps = {
     isOpen: boolean;
     onClose: () => void;
     onDateChangeTemp: (date: Date | null) => void;
+    onRefeshToday: (date: Date | null) => void;
 }
 
-export type TStyledComponentsProps = {
-    value: Date | null;
-    onChangeDate: (date: Date | null) => void;
+export enum EConfirmType {
+    CONFIRM = 'confirm',
+    TODAY = 'today',
+    CANCEL = 'cancel',
 }
+

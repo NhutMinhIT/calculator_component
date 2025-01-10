@@ -6,6 +6,7 @@ import { CALENDAR_TEXT_FIELD_LABEL, CALENDER_TEXT_FIELD_DATA_TEST_ID, CALENDER_T
 import { convertDateToString } from "./utils";
 import styles from "./styles/style.module.css";
 import { CustomizedTextField } from "./components";
+import { EConfirmType } from "./types";
 
 const Root = (): JSX.Element => {
     const {
@@ -33,7 +34,8 @@ const Root = (): JSX.Element => {
                 tempDate={tempDate}
                 onDateChangeTemp={handleDateTemp}
                 onClose={handleCloseCalendarDialog}
-                onConfirm={handleConfirmDate}
+                onConfirm={(): void => handleConfirmDate(EConfirmType.CONFIRM)}
+                onRefeshToday={(): void => handleConfirmDate(EConfirmType.TODAY)}
             />
         </Box>
     );

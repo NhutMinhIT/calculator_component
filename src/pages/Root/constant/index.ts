@@ -5,3 +5,4 @@ export const CALENDAR_DIALOG_ID: string = 'alert-dialog-slide-description'
 export const CALENDAR_TEXT_FIELD_LABEL: string = 'Date'
 export const CALENDER_TEXT_FIELD_ID: string = 'date'
 export const CALENDER_TEXT_FIELD_DATA_TEST_ID: string = 'input-date'
+export const FIXED_WEEK_NUMBER: number = 6

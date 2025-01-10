@@ -4,6 +4,8 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { FC, memo } from "react";
 import { dayOfWeekFormatter, shouldDisableMonth } from "../../utils/datePicker";
 import { TStyledComponentsProps } from "../../types";
+import { Button } from "@mui/material";
+import { FIXED_WEEK_NUMBER } from "../../constant";
 
 const CustomizeCalendar = styled(DateCalendar)`
     .css-iupya1-MuiButtonBase-root-MuiIconButton-root-MuiPickersCalendarHeader-switchViewButton {
@@ -94,7 +96,9 @@ const CustomizeCalendar = styled(DateCalendar)`
     }  
 
 `
+// const refeshToday = () => {
 
+// }
 
 const StyledComponents: FC<TStyledComponentsProps> = ({ value, onChangeDate, ...props }) => {
     return (
@@ -104,7 +108,7 @@ const StyledComponents: FC<TStyledComponentsProps> = ({ value, onChangeDate, ...
             <CustomizeCalendar
                 {...props}
                 showDaysOutsideCurrentMonth
-                fixedWeekNumber={6}
+                fixedWeekNumber={FIXED_WEEK_NUMBER}
                 dayOfWeekFormatter={dayOfWeekFormatter}
                 shouldDisableMonth={shouldDisableMonth}
                 onChange={onChangeDate}

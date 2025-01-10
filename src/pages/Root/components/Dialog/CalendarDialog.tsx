@@ -5,7 +5,6 @@ import { ECalendarButtonVariant, ECalenderButtonColor, TCalendarDialogProps } fr
 import { CALENDAR_DIALOG_CANCEL_BUTTON_TEXT, CALENDAR_DIALOG_CONFIRM_BUTTON_TEXT, CALENDAR_DIALOG_ID } from "../../constant";
 import CustomizeCalendar from "../Customize/CustomizeCalendar";
 import styled from "../../styles/style.module.css";
-import dayjs from "dayjs";
 import { useHandleDateSelect } from "../../utils/datePicker";
 
 const CalendarDialog: FC<TCalendarDialogProps> = ({
@@ -14,8 +13,10 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
     onDateChangeTemp,
     tempDate,
     onConfirm,
+    onRefeshToday,
 }) => {
     const handleDateSelect = useHandleDateSelect(onDateChangeTemp);
+
     return (
         <Dialog
             open={isOpen}
@@ -47,6 +48,14 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
                     className={styled.btnActionCalendar}
                 >
                     {CALENDAR_DIALOG_CANCEL_BUTTON_TEXT}
+                </Button>
+                <Button
+                    variant={ECalendarButtonVariant.CONTAINED}
+                    color={ECalenderButtonColor.PRIMARY}
+                    className={styled.btnActionCalendar}
+                    onClick={(): void => onRefeshToday(new Date())}
+                >
+                    Today
                 </Button>
             </DialogActions>
         </Dialog>
