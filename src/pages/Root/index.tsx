@@ -6,7 +6,8 @@ import {
     CALENDAR_EMTRY_VALUE,
     CALENDAR_TEXT_FIELD_LABEL,
     CALENDER_TEXT_FIELD_DATA_TEST_ID,
-    CALENDER_TEXT_FIELD_ID
+    CALENDER_TEXT_FIELD_ID,
+    ROOT_COMPONENT_DATA_TEST_ID
 } from "./constant";
 import { convertDateToString } from "./utils";
 import styles from "./styles/style.module.css";
@@ -25,7 +26,10 @@ const Root = (): JSX.Element => {
     } = useCalendar();
 
     return (
-        <Box className={styles.rootPage}>
+        <Box
+            className={styles.rootPage}
+            data-testid={ROOT_COMPONENT_DATA_TEST_ID}
+        >
             <CustomizedTextField
                 label={CALENDAR_TEXT_FIELD_LABEL}
                 id={CALENDER_TEXT_FIELD_ID}

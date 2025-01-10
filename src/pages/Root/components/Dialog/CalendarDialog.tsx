@@ -15,6 +15,7 @@ import {
     CALENDAR_DIALOG_CANCEL_BUTTON_TEXT,
     CALENDAR_DIALOG_CONFIRM_BUTTON_TEXT,
     CALENDAR_DIALOG_ID,
+    CALENDAR_DIALOG_TEST_ID,
     CALENDAR_DIALOG_TODAY_BUTTON_TEXT
 } from "../../constant";
 import CustomizeCalendar from "../Customize/CustomizeCalendar";
@@ -47,6 +48,8 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
             keepMounted
             onClose={onClose}
             aria-describedby={CALENDAR_DIALOG_ID}
+            data-testid={CALENDAR_DIALOG_TEST_ID}
+
         >
             <DialogContent>
                 <CustomizeCalendar
