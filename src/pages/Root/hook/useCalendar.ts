@@ -22,14 +22,11 @@ export const useCalendar = (): TUseCalendar => {
     const handleConfirmDate = (type: string): void => {
         if (type === EConfirmType.CONFIRM) {
             setSelectedDate(tempDate ? new Date(tempDate) : new Date());
-            handleCloseCalendarDialog();
         }
         if (type === EConfirmType.TODAY) {
             setSelectedDate(new Date());
-            handleCloseCalendarDialog();
-        } else {
-            handleCloseCalendarDialog();
         }
+        handleCloseCalendarDialog();
     };
 
 

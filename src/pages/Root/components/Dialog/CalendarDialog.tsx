@@ -21,12 +21,12 @@ import {
     CALENDAR_DIALOG_TODAY_BUTTON_TEXT
 } from "../../constant";
 import styles from "../../styles/root-page.module.css";
-import { useHandleDateSelect } from "../../utils/datePicker";
 import {
     CustomizeCalendar,
     CustomizedTodayButton,
     TransitionDialog
 } from "../../components/index";
+import { handleDateSelectUtil } from "../../utils/datePicker";
 const CalendarDialog: FC<TCalendarDialogProps> = ({
     isOpen,
     onClose,
@@ -35,7 +35,7 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
     onConfirm,
     onRefeshToday,
 }) => {
-    const handleDateSelect = useHandleDateSelect(onDateChangeTemp);
+    const handleDateSelect = handleDateSelectUtil(onDateChangeTemp);
     const renderButtonToday = (): JSX.Element => {
         return (
             <CustomizedTodayButton

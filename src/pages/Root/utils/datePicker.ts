@@ -3,7 +3,7 @@ import dayjs, { Dayjs } from 'dayjs';
 const DATE_FORMAT = 'ddd';
 const DISABLE_LAST_DAY = 'day'
 
-export const useHandleDateSelect = (onDateChangeTemp: (date: Date | null) => void) => {
+export const handleDateSelectUtil = (onDateChangeTemp: (date: Date | null) => void) => {
     const handleDateSelect = (date: any) => {
         const selectedDate = dayjs(date).toDate();
         onDateChangeTemp(selectedDate);

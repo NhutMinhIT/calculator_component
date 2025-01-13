@@ -22,7 +22,7 @@ import {
     Box,
     Typography
 } from "@mui/material";
-import CustomizedButtonIcon from "./CustomizedIconButton";
+import { CustomizedButtonIcon } from '..';
 
 const CustomizeCalendar = styled(DateCalendar)`   
 
