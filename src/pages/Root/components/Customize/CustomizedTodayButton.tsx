@@ -2,7 +2,6 @@ import { Button, ButtonProps } from "@mui/material";
 import { FC, memo } from "react";
 import { styled } from '@mui/material/styles';
 
-
 type TStyledComponentProps = ButtonProps;
 
 const CustomizedTodayButton = styled(Button)

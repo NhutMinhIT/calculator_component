@@ -11,7 +11,6 @@ export const useHandleDateSelect = (onDateChangeTemp: (date: Date | null) => voi
     return handleDateSelect;
 };
 
-
 export const dayOfWeekFormatter = (date: Dayjs) => {
     return date.format(DATE_FORMAT);
 }
