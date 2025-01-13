@@ -2,8 +2,6 @@ import { IconButton, IconButtonProps } from "@mui/material";
 import { FC, memo } from "react";
 import { styled } from '@mui/material/styles';
 
-type TStyledComponentProps = IconButtonProps;
-
 const CustomizedIconButton = styled(IconButton)
     `
     &.MuiIconButton-root{
@@ -13,8 +11,7 @@ const CustomizedIconButton = styled(IconButton)
         background-color: rgba(236, 234, 234, 0.5);
    }
 `
-
-const StyledComponents: FC<TStyledComponentProps> = (props) => {
+const StyledComponents: FC<IconButtonProps> = (props) => {
     return (
         <CustomizedIconButton
             {...props}

@@ -5,27 +5,28 @@ import {
     DialogActions,
     DialogContent
 } from "@mui/material";
-import TransitionDialog from "../Transition/TransitionDialog";
 import {
     ECalendarButtonVariant,
     ECalenderButtonColor,
     TCalendarDialogProps
 } from "../../types";
 import {
-    CALENDAR_DIALOG_CANCEL_BUTTON_TEST_ID,
+    CALENDAR_DIALOG_CANCEL_BUTTON_DATA_TEST_ID,
     CALENDAR_DIALOG_CANCEL_BUTTON_TEXT,
-    CALENDAR_DIALOG_CONFIRM_BUTTON_TEST_ID,
+    CALENDAR_DIALOG_CONFIRM_BUTTON_DATA_TEST_ID,
     CALENDAR_DIALOG_CONFIRM_BUTTON_TEXT,
+    CALENDAR_DIALOG_DATA_TEST_ID,
     CALENDAR_DIALOG_ID,
-    CALENDAR_DIALOG_TEST_ID,
-    CALENDAR_DIALOG_TODAY_BUTTON_TEST_ID,
+    CALENDAR_DIALOG_TODAY_BUTTON_DATA_TEST_ID,
     CALENDAR_DIALOG_TODAY_BUTTON_TEXT
 } from "../../constant";
-import CustomizeCalendar from "../Customize/CustomizeCalendar";
-import styles from "../../styles/style.module.css";
+import styles from "../../styles/root-page.module.css";
 import { useHandleDateSelect } from "../../utils/datePicker";
-import CustomizedTodayButton from "../Customize/CustomizedTodayButton";
-
+import {
+    CustomizeCalendar,
+    CustomizedTodayButton,
+    TransitionDialog
+} from "../../components/index";
 const CalendarDialog: FC<TCalendarDialogProps> = ({
     isOpen,
     onClose,
@@ -38,7 +39,7 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
     const renderButtonToday = (): JSX.Element => {
         return (
             <CustomizedTodayButton
-                data-testid={CALENDAR_DIALOG_TODAY_BUTTON_TEST_ID}
+                data-testid={CALENDAR_DIALOG_TODAY_BUTTON_DATA_TEST_ID}
                 onClick={(): void => onRefeshToday(new Date())}
             >
                 {CALENDAR_DIALOG_TODAY_BUTTON_TEXT}
@@ -52,7 +53,7 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
             keepMounted
             onClose={onClose}
             aria-describedby={CALENDAR_DIALOG_ID}
-            data-testid={CALENDAR_DIALOG_TEST_ID}
+            data-testid={CALENDAR_DIALOG_DATA_TEST_ID}
 
         >
             <DialogContent>
@@ -68,13 +69,13 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
                     variant={ECalendarButtonVariant.CONTAINED}
                     color={ECalenderButtonColor.PRIMARY}
                     onClick={onClose}
-                    data-testid={CALENDAR_DIALOG_CANCEL_BUTTON_TEST_ID}
+                    data-testid={CALENDAR_DIALOG_CANCEL_BUTTON_DATA_TEST_ID}
                     className={styles.btnActionCalendar}
                 >
                     {CALENDAR_DIALOG_CANCEL_BUTTON_TEXT}
                 </Button>
                 <Button
-                    data-testid={CALENDAR_DIALOG_CONFIRM_BUTTON_TEST_ID}
+                    data-testid={CALENDAR_DIALOG_CONFIRM_BUTTON_DATA_TEST_ID}
                     variant={ECalendarButtonVariant.CONTAINED}
                     color={ECalenderButtonColor.PRIMARY}
                     onClick={onConfirm}

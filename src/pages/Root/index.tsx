@@ -1,5 +1,4 @@
 import React from "react";
-import CalendarDialog from "./components/Dialog/CalendarDialog";
 import { useCalendar } from "./hook/useCalendar";
 import {
     Box,
@@ -10,16 +9,17 @@ import {
     OutlinedInput
 } from "@mui/material";
 import {
-    CALENDAR_DIALOG_TEST_ID,
+    CALENDAR_DIALOG_DATA_TEST_ID,
     CALENDAR_EMTRY_VALUE,
     CALENDAR_TEXT_FIELD_LABEL,
     CALENDER_TEXT_FIELD_DATA_TEST_ID,
     ROOT_COMPONENT_DATA_TEST_ID
 } from "./constant";
 import { convertDateToString } from "./utils";
-import styles from "./styles/style.module.css";
+import styles from "./styles/root-page.module.css";
 import { EConfirmType } from "./types";
 import { CalendarIcon } from "@mui/x-date-pickers";
+import { CalendarDialog } from "./components";
 
 const Root = (): JSX.Element => {
     const {
@@ -57,7 +57,7 @@ const Root = (): JSX.Element => {
                 />
             </FormControl>
             <CalendarDialog
-                data-testid={CALENDAR_DIALOG_TEST_ID}
+                data-testid={CALENDAR_DIALOG_DATA_TEST_ID}
                 isOpen={isOpenCalendarDialog}
                 tempDate={tempDate}
                 onDateChangeTemp={handleDateTemp}

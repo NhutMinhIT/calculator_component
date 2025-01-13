@@ -2,7 +2,6 @@ import { Button, ButtonProps } from "@mui/material";
 import { FC, memo } from "react";
 import { styled } from '@mui/material/styles';
 
-type TStyledComponentProps = ButtonProps;
 
 const CustomizedTodayButton = styled(Button)
     `    &.MuiButtonBase-root{
@@ -18,7 +17,7 @@ const CustomizedTodayButton = styled(Button)
    }
 `
 
-const StyledComponents: FC<TStyledComponentProps> = (props) => {
+const StyledComponents: FC<ButtonProps> = (props) => {
     return (
         <CustomizedTodayButton
             {...props}
