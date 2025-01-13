@@ -19,6 +19,12 @@ export enum ECalendarDialogTransition {
     LEFT = 'left',
     RIGHT = 'right',
 }
+export enum EConfirmType {
+    CONFIRM = 'confirm',
+    TODAY = 'today',
+    CANCEL = 'cancel',
+}
+
 
 export type TUseCalendar = {
     tempDate: Date | null
@@ -45,9 +51,4 @@ export type TCalendarDialogProps = {
     onRefeshToday: (date: Date | null) => void;
 }
 
-export enum EConfirmType {
-    CONFIRM = 'confirm',
-    TODAY = 'today',
-    CANCEL = 'cancel',
-}
 
