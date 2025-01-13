@@ -1,7 +1,10 @@
 
 export const CALENDAR_DIALOG_CONFIRM_BUTTON_TEXT: string = 'OK'
+export const CALENDAR_DIALOG_CONFIRM_BUTTON_TEST_ID: string = 'confirm-button'
 export const CALENDAR_DIALOG_CANCEL_BUTTON_TEXT: string = 'Cancel'
+export const CALENDAR_DIALOG_CANCEL_BUTTON_TEST_ID: string = 'cancel-button'
 export const CALENDAR_DIALOG_TODAY_BUTTON_TEXT: string = 'Today'
+export const CALENDAR_DIALOG_TODAY_BUTTON_TEST_ID: string = 'today-button'
 export const CALENDAR_DIALOG_ID: string = 'alert-dialog-slide-description'
 export const CALENDAR_DIALOG_TEST_ID: string = 'calendar-dialog-slide'
 export const CALENDAR_TEXT_FIELD_LABEL: string = 'Date'

@@ -12,10 +12,13 @@ import {
     TCalendarDialogProps
 } from "../../types";
 import {
+    CALENDAR_DIALOG_CANCEL_BUTTON_TEST_ID,
     CALENDAR_DIALOG_CANCEL_BUTTON_TEXT,
+    CALENDAR_DIALOG_CONFIRM_BUTTON_TEST_ID,
     CALENDAR_DIALOG_CONFIRM_BUTTON_TEXT,
     CALENDAR_DIALOG_ID,
     CALENDAR_DIALOG_TEST_ID,
+    CALENDAR_DIALOG_TODAY_BUTTON_TEST_ID,
     CALENDAR_DIALOG_TODAY_BUTTON_TEXT
 } from "../../constant";
 import CustomizeCalendar from "../Customize/CustomizeCalendar";
@@ -35,6 +38,7 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
     const renderButtonToday = (): JSX.Element => {
         return (
             <CustomizedTodayButton
+                data-testid={CALENDAR_DIALOG_TODAY_BUTTON_TEST_ID}
                 onClick={(): void => onRefeshToday(new Date())}
             >
                 {CALENDAR_DIALOG_TODAY_BUTTON_TEXT}
@@ -64,12 +68,13 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
                     variant={ECalendarButtonVariant.CONTAINED}
                     color={ECalenderButtonColor.PRIMARY}
                     onClick={onClose}
-
+                    data-testid={CALENDAR_DIALOG_CANCEL_BUTTON_TEST_ID}
                     className={styles.btnActionCalendar}
                 >
                     {CALENDAR_DIALOG_CANCEL_BUTTON_TEXT}
                 </Button>
                 <Button
+                    data-testid={CALENDAR_DIALOG_CONFIRM_BUTTON_TEST_ID}
                     variant={ECalendarButtonVariant.CONTAINED}
                     color={ECalenderButtonColor.PRIMARY}
                     onClick={onConfirm}

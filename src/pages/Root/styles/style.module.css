@@ -7,7 +7,7 @@
 
 .btnActionCalendar {
     width: auto;
-    min-width: 6rem;
+    min-width: 6rem !important;
     text-align: center;
     text-transform: capitalize;
     font-weight: 500;
