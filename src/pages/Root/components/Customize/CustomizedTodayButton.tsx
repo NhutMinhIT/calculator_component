@@ -1,12 +1,13 @@
 import { Button, ButtonProps } from "@mui/material";
 import { FC, memo } from "react";
-import styled from "styled-components";
+import { styled } from '@mui/material/styles';
+
 
 type TStyledComponentProps = ButtonProps;
 
 const CustomizedTodayButton = styled(Button)
     `
-    &.css-1588512-MuiButtonBase-root-MuiButton-root{
+    &.MuiButtonBase-root{
         border: 1px solid gray;
         border-radius: 0.2rem;
         color: #333333;

@@ -6,13 +6,12 @@ type TStyledComponentProps = IconButtonProps;
 
 const CustomizedIconButton = styled(IconButton)
     `
-    &.css-aixiz9-MuiButtonBase-root-MuiIconButton-root{
+    &.MuiIconButton-root{
         border: 1px solid gray;
-        border-radius: 0.2rem;
+        border-radius: 0.3rem;
         color: black;
         background-color: rgba(236, 234, 234, 0.5);
-        font-weight: 700;
-   }
+       }
 `
 
 const StyledComponents: FC<TStyledComponentProps> = (props) => {
