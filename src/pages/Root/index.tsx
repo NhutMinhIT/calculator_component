@@ -1,19 +1,25 @@
 import React from "react";
 import CalendarDialog from "./components/Dialog/CalendarDialog";
 import { useCalendar } from "./hook/useCalendar";
-import { Box } from "@mui/material";
+import {
+    Box,
+    FormControl,
+    IconButton,
+    InputAdornment,
+    InputLabel,
+    OutlinedInput
+} from "@mui/material";
 import {
     CALENDAR_DIALOG_TEST_ID,
     CALENDAR_EMTRY_VALUE,
     CALENDAR_TEXT_FIELD_LABEL,
     CALENDER_TEXT_FIELD_DATA_TEST_ID,
-    CALENDER_TEXT_FIELD_ID,
     ROOT_COMPONENT_DATA_TEST_ID
 } from "./constant";
 import { convertDateToString } from "./utils";
 import styles from "./styles/style.module.css";
-import { CustomizedTextField } from "./components";
 import { EConfirmType } from "./types";
+import { CalendarIcon } from "@mui/x-date-pickers";
 
 const Root = (): JSX.Element => {
     const {
@@ -31,14 +37,25 @@ const Root = (): JSX.Element => {
             className={styles.rootPage}
             data-testid={ROOT_COMPONENT_DATA_TEST_ID}
         >
-            <CustomizedTextField
-                label={CALENDAR_TEXT_FIELD_LABEL}
-                id={CALENDER_TEXT_FIELD_ID}
-                data-testid={CALENDER_TEXT_FIELD_DATA_TEST_ID}
-                type="text"
-                value={selectedDate ? convertDateToString(selectedDate) : CALENDAR_EMTRY_VALUE}
-                onClick={handleOpenCalendarDialog}
-            />
+            <FormControl
+            >
+                <InputLabel htmlFor="calendarInput">{CALENDAR_TEXT_FIELD_LABEL}</InputLabel>
+                <OutlinedInput
+                    data-testid={CALENDER_TEXT_FIELD_DATA_TEST_ID}
+                    id="calendarInput"
+                    onClick={handleOpenCalendarDialog}
+                    endAdornment={
+                        <InputAdornment position="end">
+                            <IconButton>
+                                <CalendarIcon />
+                            </IconButton>
+                        </InputAdornment>
+                    }
+                    label={CALENDAR_TEXT_FIELD_LABEL}
+                    value={selectedDate ? convertDateToString(selectedDate) : CALENDAR_EMTRY_VALUE}
+
+                />
+            </FormControl>
             <CalendarDialog
                 data-testid={CALENDAR_DIALOG_TEST_ID}
                 isOpen={isOpenCalendarDialog}

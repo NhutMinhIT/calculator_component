@@ -1,6 +1,6 @@
 import { IconButton, IconButtonProps } from "@mui/material";
 import { FC, memo } from "react";
-import styled from "styled-components";
+import { styled } from '@mui/material/styles';
 
 type TStyledComponentProps = IconButtonProps;
 
