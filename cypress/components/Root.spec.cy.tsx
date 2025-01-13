@@ -12,17 +12,17 @@ describe('Root component', () => {
     const mountRoot = () => {
         mount(<Root />);
     }
+    beforeEach(() => {
+        mountRoot();
+    })
 
     it('should render root component successfully', () => {
-        mountRoot();
         cy.get(`[data-testid=${ROOT_COMPONENT_DATA_TEST_ID}]`).should('exist');
     });
     it('should render input component successfully', () => {
-        mountRoot();
         cy.get(`[data-testid=${CALENDER_TEXT_FIELD_DATA_TEST_ID}]`).should('exist')
     })
     it('should render dialog component successfully', () => {
-        mountRoot();
         cy.get(`[data-testid=${CALENDAR_DIALOG_TEST_ID}]`).should('exist')
     })
 
@@ -34,7 +34,6 @@ describe('Root component', () => {
     })
 
     it('should close dialog component successfully', () => {
-        mountRoot();
         cy.get(`[data-testid=${CALENDER_TEXT_FIELD_DATA_TEST_ID}]`).click();
         cy.get(`[data-testid=${CALENDAR_DIALOG_TEST_ID}]`).should('exist')
         cy.get(`[data-testid=${CALENDAR_DIALOG_CANCEL_BUTTON_TEST_ID}]`).click();
@@ -42,7 +41,6 @@ describe('Root component', () => {
 
     //choose date
     it('choose date successfully', () => {
-        mountRoot();
         const Date = dayjs('2025-11-27').toDate();
         cy.get(`[data-testid=${CALENDER_TEXT_FIELD_DATA_TEST_ID}]`).click();
         cy.get(`[data-testid=${CALENDAR_DIALOG_TEST_ID}]`).should('exist')
