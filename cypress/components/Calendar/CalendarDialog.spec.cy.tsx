@@ -68,7 +68,7 @@ describe("CalendarDialog Component", () => {
         cy.get(`[data-testid=${CALENDAR_DIALOG_TEST_ID}]`).find('button').contains(date.getDate()).click();
         cy.get("@onDateChangeTemp").should("have.been.calledOnce");
     });
-    it('chooose date when select date', () => {
+    it('choose a date when select date', () => {
         const Date = dayjs('2025-11-20').toDate();
         cy.get(`[data-testid=${CALENDAR_DIALOG_TEST_ID}]`).find('button').contains(Date.getDate()).click();
         cy.get("@onDateChangeTemp").should("have.been.calledOnce");
