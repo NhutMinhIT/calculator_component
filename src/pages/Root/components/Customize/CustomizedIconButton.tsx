@@ -11,7 +11,7 @@ const CustomizedIconButton = styled(IconButton)
         border-radius: 0.3rem;
         color: black;
         background-color: rgba(236, 234, 234, 0.5);
-       }
+   }
 `
 
 const StyledComponents: FC<TStyledComponentProps> = (props) => {
