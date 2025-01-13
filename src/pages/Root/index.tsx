@@ -3,6 +3,7 @@ import CalendarDialog from "./components/Dialog/CalendarDialog";
 import { useCalendar } from "./hook/useCalendar";
 import { Box } from "@mui/material";
 import {
+    CALENDAR_DIALOG_TEST_ID,
     CALENDAR_EMTRY_VALUE,
     CALENDAR_TEXT_FIELD_LABEL,
     CALENDER_TEXT_FIELD_DATA_TEST_ID,
@@ -39,6 +40,7 @@ const Root = (): JSX.Element => {
                 onClick={handleOpenCalendarDialog}
             />
             <CalendarDialog
+                data-testid={CALENDAR_DIALOG_TEST_ID}
                 isOpen={isOpenCalendarDialog}
                 tempDate={tempDate}
                 onDateChangeTemp={handleDateTemp}
