@@ -3,13 +3,12 @@ import styles from './style/calendar.module.css'
 import {
     DateCalendar,
     LocalizationProvider,
-    PickersCalendarHeaderProps
+    PickersCalendarHeaderProps,
 } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { FC, memo } from "react";
 import {
     dayOfWeekFormatter,
-    shouldDisableMonth
 } from "../../utils/datePicker";
 import { TStyledComponentsProps } from "../../types";
 import { CALENDAR_FIXED_WEEK_NUMBER } from "../../constant";
@@ -17,7 +16,7 @@ import {
     SkipNext,
     SkipPrevious
 } from "@mui/icons-material";
-import { Dayjs } from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 import {
     Box,
     Typography
@@ -94,10 +93,10 @@ const StyledComponents: FC<TStyledComponentsProps> = ({ value, onChangeDate, ren
         >
             <CustomizeCalendar
                 {...props}
+                value={dayjs(value)}
                 showDaysOutsideCurrentMonth
                 fixedWeekNumber={CALENDAR_FIXED_WEEK_NUMBER}
                 dayOfWeekFormatter={dayOfWeekFormatter}
-                shouldDisableMonth={shouldDisableMonth}
                 onChange={onChangeDate}
                 slots={{
                     calendarHeader: renderCustomeHeader
