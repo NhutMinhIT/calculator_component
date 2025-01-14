@@ -34,6 +34,7 @@ export type TUseCalendar = {
     handleCloseCalendarDialog: () => void
     handleDateTemp: (date: Date | null) => void
     handleConfirmDate: (type: string) => void
+    handleTodayTemp: () => void
 }
 
 export type TStyledComponentsProps = {

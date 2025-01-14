@@ -16,7 +16,6 @@ export const useCalendar = (): TUseCalendar => {
 
     const handleDateTemp = (date: Date | null): void => {
         setTempDate(date);
-
     };
 
     const handleConfirmDate = (type: string): void => {
@@ -24,14 +23,12 @@ export const useCalendar = (): TUseCalendar => {
             setSelectedDate(tempDate ? new Date(tempDate) : new Date());
             handleCloseCalendarDialog();
         }
-        if (type === EConfirmType.TODAY) {
-            setSelectedDate(new Date());
-            handleCloseCalendarDialog();
-        } else {
-            handleCloseCalendarDialog();
-        }
     };
 
+    const handleTodayTemp = (): void => {
+        const today = new Date();
+        setTempDate(today);
+    };
 
     return {
         isOpenCalendarDialog,
@@ -39,8 +36,8 @@ export const useCalendar = (): TUseCalendar => {
         tempDate,
         handleOpenCalendarDialog,
         handleCloseCalendarDialog,
-        // action choose Date
         handleDateTemp,
         handleConfirmDate,
+        handleTodayTemp,
     };
 };

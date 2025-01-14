@@ -36,11 +36,14 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
     onRefeshToday,
 }) => {
     const handleDateSelect = useHandleDateSelect(onDateChangeTemp);
+
     const renderButtonToday = (): JSX.Element => {
         return (
             <CustomizedTodayButton
+                variant={ECalendarButtonVariant.CONTAINED}
+                color={ECalenderButtonColor.PRIMARY}
+                onClick={(e) => onRefeshToday(null)}
                 data-testid={CALENDAR_DIALOG_TODAY_BUTTON_DATA_TEST_ID}
-                onClick={(): void => onRefeshToday(new Date())}
             >
                 {CALENDAR_DIALOG_TODAY_BUTTON_TEXT}
             </CustomizedTodayButton>
