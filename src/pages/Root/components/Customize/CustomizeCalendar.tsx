@@ -26,7 +26,7 @@ const CustomizeCalendar = styled(DateCalendar)`
    .MuiDayCalendar-header {  
         display: flex;
         justify-content: space-between; 
-    
+        padding: 0.5rem 0.5rem;
     }   
     .MuiDayCalendar-weekDayLabel{
         font-weight: 600;
@@ -40,7 +40,8 @@ const CustomizeCalendar = styled(DateCalendar)`
         font-weight: 600;
         width: 2.5rem !important;
         height: 2.5rem !important;
-        overflow-y: hidden;
+        padding: 1.5rem 1.5rem;
+        overflow: hidden;
     }      
 
     .MuiPickersDay-root:hover{
