@@ -23,12 +23,9 @@ import { CustomizedButtonIcon } from '..';
 
 const CustomizeCalendar = styled(DateCalendar)`   
 
-   .MuiDayCalendar-header {
-   position: relative;
-   z-index: 1;
+   .MuiDayCalendar-header {  
         display: flex;
         justify-content: space-between;
-        width: 100%;
     }   
     .MuiDayCalendar-weekDayLabel{
         font-weight: 600;
@@ -36,15 +33,12 @@ const CustomizeCalendar = styled(DateCalendar)`
 
     .MuiDayCalendar-weekContainer {
         justify-content: space-between;
-        position: sticky;
-        z-index: 10;
-        min-height: 2.5rem;
     }      
     .MuiPickersDay-root {
         border-radius: 0.5rem;   
         font-weight: 600;
-        width: 2.8rem !important;
-        height: 2.8rem !important;
+        width: 3rem !important;
+        height: 3rem !important;
         overflow-y: hidden;
         margin:0px;
     }      
@@ -61,12 +55,15 @@ const CustomizeCalendar = styled(DateCalendar)`
         color:white;
         font-weight: 700;
     }
-
     .MuiPickersSlideTransition-root{
-        overflow: hidden;       
+        overflow: hidden;    
     }
-   
-`
+
+    .MuiDayCalendar-monthContainer {
+        position: relative;
+        bottom:20px;
+    }
+   `
 const CALENDER_VALUE_MONTH_NUMBER: number = 1
 const CALENDAR_HEADER_FORMAT: string = 'MMM YYYY'
 
@@ -108,6 +105,7 @@ const StyledComponents: FC<TStyledComponentsProps> = ({ value, onChangeDate, ren
             dateAdapter={AdapterDayjs}
         >
             <CustomizeCalendar
+
                 {...props}
                 value={dayjs(value)}
                 showDaysOutsideCurrentMonth

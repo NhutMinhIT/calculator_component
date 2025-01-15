@@ -3,7 +3,8 @@ import {
     Button,
     Dialog,
     DialogActions,
-    DialogContent
+    DialogContent,
+    DialogContentText
 } from "@mui/material";
 import {
     ECalendarButtonVariant,
@@ -16,7 +17,6 @@ import {
     CALENDAR_DIALOG_CONFIRM_BUTTON_DATA_TEST_ID,
     CALENDAR_DIALOG_CONFIRM_BUTTON_TEXT,
     CALENDAR_DIALOG_DATA_TEST_ID,
-    CALENDAR_DIALOG_ID,
     CALENDAR_DIALOG_TODAY_BUTTON_DATA_TEST_ID,
     CALENDAR_DIALOG_TODAY_BUTTON_TEXT
 } from "../../constant";
@@ -54,16 +54,19 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
             TransitionComponent={TransitionDialog}
             keepMounted
             onClose={onClose}
-            aria-describedby={CALENDAR_DIALOG_ID}
             data-testid={CALENDAR_DIALOG_DATA_TEST_ID}
-
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
         >
-            <DialogContent>
+            <DialogContent
+                className={styles.dialogContent}
+            >
                 <CustomizeCalendar
                     value={tempDate ?? new Date()}
                     onChangeDate={handleDateSelect}
                     renderButtonToday={renderButtonToday}
                 />
+
             </DialogContent>
 
             <DialogActions>

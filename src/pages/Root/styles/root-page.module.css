@@ -12,3 +12,9 @@
     text-transform: capitalize;
     font-weight: 500;
 }
+
+.dialogContent>div {
+    width: 28rem !important;
+    min-height: 400px !important;
+    overflow: hidden;
+}
