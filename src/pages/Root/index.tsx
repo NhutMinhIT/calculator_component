@@ -12,6 +12,7 @@ import { CalendarIcon } from "@mui/x-date-pickers";
 import { CalendarDialog } from "./components";
 import styles from "./styles/root-page.module.css";
 import { EConfirmType } from "./types";
+import { CALENDAR_DIALOG_DATA_TEST_ID, CALENDAR_TEXT_FIELD_LABEL, CALENDER_TEXT_FIELD_DATA_TEST_ID, ROOT_COMPONENT_DATA_TEST_ID } from "./constant";
 
 const Root = (): JSX.Element => {
     const {
@@ -26,10 +27,16 @@ const Root = (): JSX.Element => {
     } = useCalendar();
 
     return (
-        <Box className={styles.rootPage}>
+        <Box
+            className={styles.rootPage}
+            data-testid={ROOT_COMPONENT_DATA_TEST_ID}
+        >
             <FormControl>
-                <InputLabel htmlFor="calendarInput">Date</InputLabel>
+                <InputLabel htmlFor="calendarInput">
+                    {CALENDAR_TEXT_FIELD_LABEL}
+                </InputLabel>
                 <OutlinedInput
+                    data-testid={CALENDER_TEXT_FIELD_DATA_TEST_ID}
                     id="calendarInput"
                     onClick={handleOpenCalendarDialog}
                     endAdornment={
@@ -45,6 +52,7 @@ const Root = (): JSX.Element => {
             </FormControl>
 
             <CalendarDialog
+                data-testid={CALENDAR_DIALOG_DATA_TEST_ID}
                 isOpen={isOpenCalendarDialog}
                 tempDate={tempDate}
                 onDateChangeTemp={handleDateTemp}

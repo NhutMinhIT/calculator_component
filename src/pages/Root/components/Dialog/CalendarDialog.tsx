@@ -4,7 +4,6 @@ import {
     Dialog,
     DialogActions,
     DialogContent,
-    DialogContentText
 } from "@mui/material";
 import {
     ECalendarButtonVariant,

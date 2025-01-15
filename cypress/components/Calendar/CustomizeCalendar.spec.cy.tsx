@@ -1,7 +1,7 @@
 import { mount } from "cypress/react";
 import dayjs from "dayjs";
 import { CustomizeCalendar, CustomizedTodayButton } from "../../../src/pages/Root/components";
-import { CALENDAR_DIALOG_TODAY_BUTTON_TEST_ID, CALENDAR_DIALOG_TODAY_BUTTON_TEXT } from "../../../src/pages/Root/constant";
+import { CALENDAR_DIALOG_TODAY_BUTTON_DATA_TEST_ID, CALENDAR_DIALOG_TODAY_BUTTON_TEXT } from "../../../src/pages/Root/constant";
 
 interface CallbackProps {
     onChangeDate?: (date: Date | null) => void;
@@ -17,7 +17,7 @@ describe("CustomizeCalendar Component", () => {
             value = new Date(),
             renderButtonToday = () => <CustomizedTodayButton
                 onClick={cy.stub().as("onRenderButtonToday")}
-                data-testid={CALENDAR_DIALOG_TODAY_BUTTON_TEST_ID}
+                data-testid={CALENDAR_DIALOG_TODAY_BUTTON_DATA_TEST_ID}
             >
                 {CALENDAR_DIALOG_TODAY_BUTTON_TEXT}
             </CustomizedTodayButton>
@@ -45,12 +45,12 @@ describe("CustomizeCalendar Component", () => {
 
     it("renders the today button", () => {
         mountCustomizeCalendar();
-        cy.get(`[data-testid=${CALENDAR_DIALOG_TODAY_BUTTON_TEST_ID}]`).should("exist");
+        cy.get(`[data-testid=${CALENDAR_DIALOG_TODAY_BUTTON_DATA_TEST_ID}]`).should("exist");
     });
 
     it("calls renderButtonToday when the today button is clicked", () => {
         mountCustomizeCalendar();
-        cy.get(`[data-testid=${CALENDAR_DIALOG_TODAY_BUTTON_TEST_ID}]`).click();
+        cy.get(`[data-testid=${CALENDAR_DIALOG_TODAY_BUTTON_DATA_TEST_ID}]`).click();
         cy.get("@onRenderButtonToday").should("have.been.called");
     });
 
