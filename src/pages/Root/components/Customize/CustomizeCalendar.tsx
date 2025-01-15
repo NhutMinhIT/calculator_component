@@ -3,21 +3,18 @@ import styles from './style/calendar.module.css'
 import {
     DateCalendar,
     LocalizationProvider,
-    PickersCalendarHeaderProps
+    PickersCalendarHeaderProps,
 } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { FC, memo } from "react";
-import {
-    dayOfWeekFormatter,
-    shouldDisableMonth
-} from "../../utils/datePicker";
+import { dayOfWeekFormatter } from "../../utils/datePicker";
 import { TStyledComponentsProps } from "../../types";
 import { CALENDAR_FIXED_WEEK_NUMBER } from "../../constant";
 import {
     SkipNext,
     SkipPrevious
 } from "@mui/icons-material";
-import { Dayjs } from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 import {
     Box,
     Typography
@@ -26,7 +23,7 @@ import { CustomizedButtonIcon } from '..';
 
 const CustomizeCalendar = styled(DateCalendar)`   
 
-    .MuiDayCalendar-header {
+   .MuiDayCalendar-header {
         display: flex;
         justify-content: space-between;
         width: 100%;
@@ -36,21 +33,29 @@ const CustomizeCalendar = styled(DateCalendar)`
     }
 
     .MuiDayCalendar-weekContainer {
-        display: flex;
         justify-content: space-between;
     }      
-
     .MuiPickersDay-root {
         border-radius: 0.5rem;   
         font-weight: 600;
-    } 
-        
+        width: 2.65rem !important;
+        height: 2.65rem !important;
+        overflow-y: hidden;
+        margin:0px;
+    }      
+
     .MuiPickersDay-root:hover{
-          background-color:rgb(73, 152, 241);
-          border-radius: 0.5rem;
-          color:white;
-          font-weight: 700;
+        background-color:rgb(73, 152, 241);
+        border-radius: 0.5rem;
+        color:white;
+        font-weight: 700;
     } 
+
+    .MuiPickersSlideTransition-root{
+        overflow: hidden;
+        min-height: 500px;
+        z-index: 99;
+    }
 `
 const CALENDER_VALUE_MONTH_NUMBER: number = 1
 const CALENDAR_HEADER_FORMAT: string = 'MMM YYYY'
@@ -94,10 +99,10 @@ const StyledComponents: FC<TStyledComponentsProps> = ({ value, onChangeDate, ren
         >
             <CustomizeCalendar
                 {...props}
+                value={dayjs(value)}
                 showDaysOutsideCurrentMonth
                 fixedWeekNumber={CALENDAR_FIXED_WEEK_NUMBER}
                 dayOfWeekFormatter={dayOfWeekFormatter}
-                shouldDisableMonth={shouldDisableMonth}
                 onChange={onChangeDate}
                 slots={{
                     calendarHeader: renderCustomeHeader
