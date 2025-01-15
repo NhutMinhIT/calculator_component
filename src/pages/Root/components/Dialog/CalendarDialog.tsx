@@ -54,8 +54,6 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
             keepMounted
             onClose={onClose}
             data-testid={CALENDAR_DIALOG_DATA_TEST_ID}
-            aria-labelledby="alert-dialog-title"
-            aria-describedby="alert-dialog-description"
         >
             <DialogContent
                 className={styles.dialogContent}
