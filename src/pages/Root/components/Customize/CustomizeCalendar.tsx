@@ -1,6 +1,7 @@
 import { styled } from '@mui/material/styles';
 import styles from './style/calendar.module.css'
 import {
+    ArrowRightIcon,
     DateCalendar,
     LocalizationProvider,
     PickersCalendarHeaderProps,
@@ -10,16 +11,14 @@ import { FC, memo } from "react";
 import { dayOfWeekFormatter } from "../../utils/datePicker";
 import { TStyledComponentsProps } from "../../types";
 import { CALENDAR_FIXED_WEEK_NUMBER } from "../../constant";
-import {
-    SkipNext,
-    SkipPrevious
-} from "@mui/icons-material";
+import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
 import dayjs, { Dayjs } from "dayjs";
 import {
     Box,
     Typography
 } from "@mui/material";
 import { CustomizedButtonIcon } from '..';
+import { ArrowLeftOutlined } from '@mui/icons-material';
 
 const CustomizeCalendar = styled(DateCalendar)`   
 
@@ -80,7 +79,7 @@ const StyledComponents: FC<TStyledComponentsProps> = ({ value, onChangeDate, ren
                 <CustomizedButtonIcon
                     onClick={selectPreviousMonth}
                 >
-                    <SkipPrevious />
+                    <ArrowLeftOutlined fontSize='large' />
                 </CustomizedButtonIcon>
 
                 <Typography
@@ -92,7 +91,7 @@ const StyledComponents: FC<TStyledComponentsProps> = ({ value, onChangeDate, ren
                 <CustomizedButtonIcon
                     onClick={selectNextMonth}
                 >
-                    <SkipNext />
+                    <ArrowRightOutlinedIcon fontSize='large' />
                 </CustomizedButtonIcon>
                 {renderButtonToday()}
             </Box>

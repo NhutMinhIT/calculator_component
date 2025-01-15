@@ -10,7 +10,8 @@ const CustomizedTodayButton = styled(Button)
         font-weight: 300;
         font-size: 0.8rem;
         padding: 0.5rem 0.5rem;
-        background-color: rgba(252, 251, 251, 0.5);
+        background: rgb(232,235,236);
+        background: linear-gradient(180deg, rgba(232,235,236,1) 20%, rgb(179, 179, 184) 80%, rgba(246,246,255,1) 100%);
         text-align: center;
         text-transform: capitalize;
    }
