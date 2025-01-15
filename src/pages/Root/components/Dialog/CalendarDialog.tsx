@@ -60,7 +60,7 @@ const CalendarDialog: FC<TCalendarDialogProps> = ({
         >
             <DialogContent>
                 <CustomizeCalendar
-                    value={tempDate}
+                    value={tempDate ?? new Date()}
                     onChangeDate={handleDateSelect}
                     renderButtonToday={renderButtonToday}
                 />

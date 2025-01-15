@@ -24,6 +24,8 @@ import { CustomizedButtonIcon } from '..';
 const CustomizeCalendar = styled(DateCalendar)`   
 
    .MuiDayCalendar-header {
+   position: relative;
+   z-index: 1;
         display: flex;
         justify-content: space-between;
         width: 100%;
@@ -34,12 +36,15 @@ const CustomizeCalendar = styled(DateCalendar)`
 
     .MuiDayCalendar-weekContainer {
         justify-content: space-between;
+        position: sticky;
+        z-index: 10;
+        min-height: 2.5rem;
     }      
     .MuiPickersDay-root {
         border-radius: 0.5rem;   
         font-weight: 600;
-        width: 2.65rem !important;
-        height: 2.65rem !important;
+        width: 2.8rem !important;
+        height: 2.8rem !important;
         overflow-y: hidden;
         margin:0px;
     }      
@@ -50,12 +55,17 @@ const CustomizeCalendar = styled(DateCalendar)`
         color:white;
         font-weight: 700;
     } 
+    .MuiPickersDay-root:focus{
+        background-color:rgb(73, 152, 241);
+        border-radius: 0.5rem;
+        color:white;
+        font-weight: 700;
+    }
 
     .MuiPickersSlideTransition-root{
-        overflow: hidden;
-        min-height: 500px;
-        z-index: 99;
+        overflow: hidden;       
     }
+   
 `
 const CALENDER_VALUE_MONTH_NUMBER: number = 1
 const CALENDAR_HEADER_FORMAT: string = 'MMM YYYY'
