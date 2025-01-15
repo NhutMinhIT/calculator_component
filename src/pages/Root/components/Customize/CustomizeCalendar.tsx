@@ -25,7 +25,8 @@ const CustomizeCalendar = styled(DateCalendar)`
 
    .MuiDayCalendar-header {  
         display: flex;
-        justify-content: space-between;
+        justify-content: space-between; 
+    
     }   
     .MuiDayCalendar-weekDayLabel{
         font-weight: 600;
@@ -37,10 +38,9 @@ const CustomizeCalendar = styled(DateCalendar)`
     .MuiPickersDay-root {
         border-radius: 0.5rem;   
         font-weight: 600;
-        width: 3rem !important;
-        height: 3rem !important;
+        width: 2.5rem !important;
+        height: 2.5rem !important;
         overflow-y: hidden;
-        margin:0px;
     }      
 
     .MuiPickersDay-root:hover{
@@ -61,7 +61,6 @@ const CustomizeCalendar = styled(DateCalendar)`
 
     .MuiDayCalendar-monthContainer {
         position: relative;
-        bottom:20px;
     }
    `
 const CALENDER_VALUE_MONTH_NUMBER: number = 1

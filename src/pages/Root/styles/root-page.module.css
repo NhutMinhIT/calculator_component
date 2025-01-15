@@ -14,7 +14,8 @@
 }
 
 .dialogContent>div {
-    width: 28rem !important;
-    min-height: 400px !important;
+    width: 26rem !important;
+    min-height: 40vh !important;
     overflow: hidden;
+
 }

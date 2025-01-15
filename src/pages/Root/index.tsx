@@ -10,9 +10,15 @@ import {
 } from "@mui/material";
 import { CalendarIcon } from "@mui/x-date-pickers";
 import { CalendarDialog } from "./components";
-import styles from "./styles/root-page.module.css";
 import { EConfirmType } from "./types";
-import { CALENDAR_DIALOG_DATA_TEST_ID, CALENDAR_TEXT_FIELD_LABEL, CALENDER_TEXT_FIELD_DATA_TEST_ID, ROOT_COMPONENT_DATA_TEST_ID } from "./constant";
+import {
+    CALENDAR_DIALOG_DATA_TEST_ID,
+    CALENDAR_TEXT_FIELD_LABEL,
+    CALENDER_TEXT_FIELD_DATA_TEST_ID,
+    ROOT_COMPONENT_DATA_TEST_ID
+} from "./constant";
+import styles from "./styles/root-page.module.css";
+
 
 const Root = (): JSX.Element => {
     const {
