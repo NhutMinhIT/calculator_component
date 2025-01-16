@@ -21,7 +21,14 @@
 .calculatorTextField {
     width: 100%;
     background: rgba(175, 173, 173, 0.3);
-    font-weight: 500;
+}
+
+.minValueErr, .maxValueErr {
+    color: red;
+}
+
+.minValue, .maxValue {
+    color: gray;
 }
 
 .calculatorRange {

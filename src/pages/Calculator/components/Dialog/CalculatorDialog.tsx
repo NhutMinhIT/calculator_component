@@ -17,9 +17,11 @@ import {
     CALCULATOR_DIALOG_TITLE_DATA_TEST_ID,
     CALCULATOR_DIALOG_TITLE_ID,
     CALCULATOR_DIALOG_ACTION_CANCEL_DATA_TEST_ID
-} from '../../constant'
+} from '../../constant';
 import { ECalendarButtonVariant } from '../../../Calendar/types'
 import { CalculatorFrame } from '../index'
+
+const inputValue = 1200;
 
 const CalculatorDialog: FC<TCalculatorDialog> = ({
     isOpen,
@@ -57,6 +59,7 @@ const CalculatorDialog: FC<TCalculatorDialog> = ({
                     variant={ECalendarButtonVariant.CONTAINED}
                     color={ECalCulatorButtonColor.PRIMARY}
                     className={styles.btnActionCalculator}
+                    disabled={inputValue < 0 || inputValue > 1000}
                 // onClick={handleClose}
                 >
                     {CALCULATOR_DIALOG_BUTTON_TEXT_ACTION_OK}
