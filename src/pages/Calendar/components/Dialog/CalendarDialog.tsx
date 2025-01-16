@@ -19,7 +19,7 @@ import {
     CALENDAR_DIALOG_TODAY_BUTTON_DATA_TEST_ID,
     CALENDAR_DIALOG_TODAY_BUTTON_TEXT
 } from "../../constant";
-import styles from "../../styles/root-page.module.css";
+import styles from "../../styles/calendar-page.module.css";
 import {
     CustomizeCalendar,
     CustomizedTodayButton,

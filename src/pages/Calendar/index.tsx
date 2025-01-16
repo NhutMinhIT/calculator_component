@@ -17,7 +17,7 @@ import {
     CALENDER_TEXT_FIELD_DATA_TEST_ID,
     ROOT_COMPONENT_DATA_TEST_ID
 } from "./constant";
-import styles from "./styles/root-page.module.css";
+import styles from "./styles/calendar-page.module.css";
 
 
 const Calendar = (): JSX.Element => {
