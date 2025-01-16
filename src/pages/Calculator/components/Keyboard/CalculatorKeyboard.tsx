@@ -8,7 +8,7 @@ import NEightButton from './NumberButton/NEightButton';
 import NFourButton from './NumberButton/NFourButton';
 import NFiveButton from './NumberButton/NFiveButton';
 import NSixButton from './NumberButton/NSixButton';
-import NOneButton from './NumberButton/NOneButton';
+import { NOneButton } from '../index';
 import NTwoButton from './NumberButton/NTwoButton';
 import NThreeButton from './NumberButton/NThreeButton';
 import OPlusOrMinusButton from './OperatorButton/OPlusOrMinusButton';

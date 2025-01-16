@@ -7,9 +7,9 @@ export const handleCalculatorButton = (value: string, currentInput: string): str
     // Delete button: remove last character
     if (value === 'delete') {
         // Handle negative sign case
-        // if (currentInput === '-') {
-        //     return '';
-        // }
+        if (currentInput === '-') {
+            return '';
+        }
         // Handle last digit of negative number
         if (currentInput.startsWith('-') && currentInput.length === 2) {
             return '';
