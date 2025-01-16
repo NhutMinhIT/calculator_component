@@ -35,12 +35,22 @@ export enum ECalculatorOperator {
 
 export type TUseCalculator = {
     isOpenCalculatorDialog: boolean;
+    inputValue: string;
+    finalValue: string;
     handleOpenCalculatorDialog: () => void;
     handleCloseCalculatorDialog: () => void;
-    // handleOnChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    handleInputChange: (value: string) => void;
+    handleConfirm: () => void;
 }
 
 export type TCalculatorDialog = {
     isOpen: boolean;
     handleClose: () => void;
+    handleConfirm: () => void;
+    inputValue: string;
+    handleInputChange: (value: string) => void;
 }
+export type TCaculatorFrame = {
+    inputValue: string;
+    handleInputChange: (value: string) => void;
+};

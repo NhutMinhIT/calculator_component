@@ -1,27 +1,27 @@
 import { useState } from "react";
-import { TUseCalculator } from "../types/calculatorType";
 
-export const useCalculator = (): TUseCalculator => {
-    const [isOpenCalculatorDialog, setIsOpenCalculatorDialog] = useState<boolean>(false);
+export const useCalculator = () => {
+    const [isOpenCalculatorDialog, setIsOpenCalculatorDialog] = useState(false);
     const [inputValue, setInputValue] = useState<number>(0);
-    const [isValue, setIsValue] = useState<number>(0);
+    const [finalValue, setFinalValue] = useState<number>(0);
 
-    const handleOpenCalculatorDialog = (): void => {
-        setIsOpenCalculatorDialog(true);
-    }
-    const handleCloseCalculatorDialog = (): void => {
-        setIsOpenCalculatorDialog(false);
-    }
-    // const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    //     if(focusButton===)
-    // }
-    const handleConfirm = (value: number): void => {
-        setIsValue(inputValue);
-    }
+    const handleOpenCalculatorDialog = () => setIsOpenCalculatorDialog(true);
+    const handleCloseCalculatorDialog = () => setIsOpenCalculatorDialog(false);
+
+    const handleInputChange = (value: number) => setInputValue(value);
+
+    const handleConfirm = () => {
+        setFinalValue(inputValue);
+        handleCloseCalculatorDialog();
+    };
+
     return {
         isOpenCalculatorDialog,
+        inputValue,
+        finalValue,
         handleOpenCalculatorDialog,
         handleCloseCalculatorDialog,
-        // handleOnChange
-    }
-}
+        handleInputChange,
+        handleConfirm
+    };
+};
