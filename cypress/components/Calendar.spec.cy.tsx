@@ -1,17 +1,18 @@
 import { mount } from "cypress/react";
-import Root from "../../src/pages/Root";
+
 import {
 
     CALENDAR_DIALOG_CANCEL_BUTTON_DATA_TEST_ID,
     CALENDAR_DIALOG_DATA_TEST_ID,
     CALENDER_TEXT_FIELD_DATA_TEST_ID,
     ROOT_COMPONENT_DATA_TEST_ID
-} from "../../src/pages/Root/constant";
+} from "../../src/pages/Calendar/constant";
 import dayjs from "dayjs";
+import Calendar from "../../src/pages/Calendar";
 
 describe('Root component', () => {
     const mountRoot = () => {
-        mount(<Root />);
+        mount(<Calendar />);
     }
     beforeEach(() => {
         mountRoot();

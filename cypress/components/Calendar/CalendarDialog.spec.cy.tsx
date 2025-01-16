@@ -1,13 +1,12 @@
 import { mount } from "cypress/react";
-import { CalendarDialog } from "../../../src/pages/Root/components";
 import {
     CALENDAR_DIALOG_CANCEL_BUTTON_DATA_TEST_ID,
-    CALENDAR_DIALOG_CANCEL_BUTTON_TEXT,
     CALENDAR_DIALOG_CONFIRM_BUTTON_DATA_TEST_ID,
     CALENDAR_DIALOG_DATA_TEST_ID,
     CALENDAR_DIALOG_TODAY_BUTTON_DATA_TEST_ID
-} from "../../../src/pages/Root/constant";
+} from "../../../src/pages/Calendar/constant";
 import dayjs from "dayjs";
+import { CalendarDialog } from "../../../src/pages/Calendar/components";
 
 describe("CalendarDialog Component", () => {
     interface CallbackProps {

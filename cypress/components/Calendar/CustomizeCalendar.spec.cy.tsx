@@ -1,7 +1,7 @@
 import { mount } from "cypress/react";
 import dayjs from "dayjs";
-import { CustomizeCalendar, CustomizedTodayButton } from "../../../src/pages/Root/components";
-import { CALENDAR_DIALOG_TODAY_BUTTON_DATA_TEST_ID, CALENDAR_DIALOG_TODAY_BUTTON_TEXT } from "../../../src/pages/Root/constant";
+import { CustomizeCalendar, CustomizedTodayButton } from "../../../src/pages/Calendar/components";
+import { CALENDAR_DIALOG_TODAY_BUTTON_DATA_TEST_ID, CALENDAR_DIALOG_TODAY_BUTTON_TEXT } from "../../../src/pages/Calendar/constant";
 
 interface CallbackProps {
     onChangeDate?: (date: Date | null) => void;

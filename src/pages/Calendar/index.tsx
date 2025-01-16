@@ -20,7 +20,7 @@ import {
 import styles from "./styles/root-page.module.css";
 
 
-const Root = (): JSX.Element => {
+const Calendar = (): JSX.Element => {
     const {
         isOpenCalendarDialog,
         selectedDate,
@@ -70,4 +70,4 @@ const Root = (): JSX.Element => {
     );
 };
 
-export default Root;
+export default Calendar;
