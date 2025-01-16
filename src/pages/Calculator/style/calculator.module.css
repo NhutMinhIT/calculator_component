@@ -10,3 +10,31 @@
     text-transform: capitalize;
     font-weight: 500;
 }
+
+.calculatorFrame {
+    width: auto;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.25rem;
+}
+
+.calculatorTextField {
+    width: 20rem;
+    background-color: #f5f5f5;
+    font-weight: 500;
+}
+
+.calculatorRange {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem 0.25rem;
+    color: gray;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.calculatorKeyboard {
+    width: 100%;
+    margin-top: 1rem;
+}
