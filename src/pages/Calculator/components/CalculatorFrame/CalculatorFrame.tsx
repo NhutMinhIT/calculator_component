@@ -15,7 +15,7 @@ import {
     CALCULTATOR_TEXT_INPUT_RANGE_MIN_DATA_TEST_ID
 } from '../../constant'
 
-const inputValue: number = 1200
+const inputValue: number = 1200;
 
 const CalculatorFrame = (): JSX.Element => {
     return (
@@ -27,7 +27,9 @@ const CalculatorFrame = (): JSX.Element => {
                 data-testid={CALCULATOR_TEXT_FIELD_INPUT_DATA_TEST_ID}
                 className={styles.calculatorTextField}
                 type='number'
-                value={inputValue}
+                defaultValue={0}
+                readOnly
+            // value={inputValue}
             />
             <Box
                 data-testid={CALCULATOR_RANGE_VALUE_DATA_TEST_ID}
