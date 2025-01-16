@@ -12,36 +12,19 @@ import {
     CALCULTATOR_TEXT_INPUT_RANGE_MIN_DATA_TEST_ID
 } from '../../constant';
 import { TCaculatorFrame } from '../../types/calculatorType';
+import { handleCalculatorButton } from '../../util/handleCalculatorButton';
 
 
 const CalculatorFrame: FC<TCaculatorFrame> = ({
     inputValue,
     handleInputChange
 }) => {
+
     const handleButtonClick = (value: string): void => {
-        // Clear button: reset input
-        if (value === 'clear') {
-            handleInputChange('');
-        }
-        // Delete button: remove last character
-        else if (value === 'delete') {
-            handleInputChange(inputValue.slice(0, -1));
-        }
-        // Toggle sign button
-        else if (value === '+/-') {
-            if (!inputValue) {
-                handleInputChange('-');  // Empty -> add minus
-            } else if (inputValue.startsWith('-')) {
-                handleInputChange(inputValue.slice(1));  // Remove minus
-            } else {
-                handleInputChange('-' + inputValue);  // Add minus
-            }
-        }
-        // Default: append value to input
-        else {
-            handleInputChange(inputValue + value);
-        }
+        const newValue = handleCalculatorButton(value, inputValue);
+        handleInputChange(newValue);
     };
+
     return (
         <Box
             data-testid={CALCULATOR_FRAME_DATA_TEST_ID}
