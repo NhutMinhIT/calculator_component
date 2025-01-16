@@ -1,20 +1,22 @@
 import React from 'react'
 import styles from '../../style/calculator.module.css'
 import { Box } from '@mui/material'
-import AClearButton from './ActionButton/AClearButton'
-import ADeleteButton from './ActionButton/ADeleteButton'
-import NNineButton from './NumberButton/NNineButton'
-import NEightButton from './NumberButton/NEightButton'
-import NSevenButton from './NumberButton/NSevenButton'
-import NSixButton from './NumberButton/NSixButton'
-import NFourButton from './NumberButton/NFourButton'
-import NFiveButton from './NumberButton/NFiveButton'
-import NOneButton from './NumberButton/NOneButton'
-import NTwoButton from './NumberButton/NTwoButton'
-import NThreeButton from './NumberButton/NThreeButton'
-import NZeroButton from './NumberButton/NZeroButton'
-import ODecimalButton from './OperatorButton/ODecimalButton'
-import OPlusOrMinusButton from './OperatorButton/OPlusOrMinusButton'
+import {
+    AClearButton,
+    ADeleteButton,
+    NSevenButton,
+    NEightButton,
+    NNineButton,
+    NFourButton,
+    NFiveButton,
+    NSixButton,
+    NOneButton,
+    NTwoButton,
+    NThreeButton,
+    NZeroButton,
+    ODecimalButton,
+    OPlusOrMinusButton
+} from '../index'
 
 const CalculatorKeyboard = (): JSX.Element => {
     return (

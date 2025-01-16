@@ -2,7 +2,6 @@ import React from 'react'
 import styles from '../../style/calculator.module.css'
 import {
     Box,
-    Stack,
     TextField
 } from '@mui/material'
 import { CalculatorKeyboard } from '../index'

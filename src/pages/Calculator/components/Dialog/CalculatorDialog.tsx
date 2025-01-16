@@ -30,6 +30,8 @@ const CalculatorDialog: FC<TCalculatorDialog> = ({
             data-testid={CALCULATOR_DIALOG_DATA_TEST_ID}
             open={isOpen}
             keepMounted
+            maxWidth="xs"
+            fullWidth
         >
             <DialogTitle
                 id={CALCULATOR_DIALOG_TITLE_ID}
