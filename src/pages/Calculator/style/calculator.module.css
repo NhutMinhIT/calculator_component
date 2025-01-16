@@ -7,15 +7,13 @@
     width: auto;
     min-width: 6rem !important;
     text-align: center;
-    text-transform: capitalize;
-    font-weight: 500;
+    text-transform: capitalize !important;
 }
 
 .calculatorFrame {
     width: auto;
     border: 1px solid gray;
     background: rgba(175, 173, 173, 0.3);
-
     border-radius: 0.5rem;
     padding: 0.5rem 0.25rem;
 }

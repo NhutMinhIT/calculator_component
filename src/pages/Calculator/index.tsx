@@ -48,6 +48,7 @@ const Calculator = (): JSX.Element => {
                     data-testid={CALCULATOR_TEXT_FIELD_DATA_TEST_ID}
                     id={CALCULATOR_TEXT_FIELD_ID}
                     label={CALCULATOR_TEXT_FIELD_LABEL}
+                    readOnly
                     // value={}
                     onClick={handleOpenCalculatorDialog}
                     endAdornment={
