@@ -1,70 +1,54 @@
-import React from 'react'
-import styles from '../Calculator/style/calculator.module.css'
+import React from 'react';
 import {
     Box,
     FormControl,
-    IconButton,
     InputAdornment,
     InputLabel,
-    OutlinedInput
-} from '@mui/material'
-import {
-    CALCULATOR_DIALOG_DATA_TEST_ID,
-    CALCULATOR_PAGE_DATA_TEST_ID,
-    CALCULATOR_TEXT_FIELD_DATA_TEST_ID,
-    CALCULATOR_TEXT_FIELD_ID,
-    CALCULATOR_TEXT_FIELD_LABEL
-} from './constant'
-import { CalculateOutlined } from '@mui/icons-material'
-import { CalculatorDialog } from './components'
-import { useCalculator } from './hooks/useCalculator'
-
-const renderEndAdornmentInputField = (): JSX.Element => {
-    return (
-        <InputAdornment position="end">
-            <IconButton>
-                <CalculateOutlined />
-            </IconButton>
-        </InputAdornment>
-    )
-}
+    OutlinedInput,
+    IconButton,
+} from '@mui/material';
+import { CalculateOutlined } from '@mui/icons-material';
+import CalculatorDialog from './components/Dialog/CalculatorDialog';
+import { useCalculator } from './hooks/useCalculator';
 
 const Calculator = (): JSX.Element => {
     const {
         isOpenCalculatorDialog,
+        inputValue,
+        finalValue,
         handleOpenCalculatorDialog,
-        handleCloseCalculatorDialog
-    } = useCalculator()
+        handleCloseCalculatorDialog,
+        handleInputChange,
+        handleConfirm
+    } = useCalculator();
+
     return (
-        <Box
-            className={styles.calculatorPage}
-            data-testid={CALCULATOR_PAGE_DATA_TEST_ID}
-        >
+        <Box>
             <FormControl>
-                <InputLabel htmlFor={CALCULATOR_TEXT_FIELD_ID}>
-                    {CALCULATOR_TEXT_FIELD_LABEL}
-                </InputLabel>
+                <InputLabel htmlFor="calculator-input">Enter Value</InputLabel>
                 <OutlinedInput
-                    className={styles.calculatorTextField}
-                    data-testid={CALCULATOR_TEXT_FIELD_DATA_TEST_ID}
-                    id={CALCULATOR_TEXT_FIELD_ID}
-                    label={CALCULATOR_TEXT_FIELD_LABEL}
+                    id="calculator-input"
+                    value={finalValue}
                     readOnly
-                    // value={}
                     onClick={handleOpenCalculatorDialog}
                     endAdornment={
-                        renderEndAdornmentInputField()
+                        <InputAdornment position="end">
+                            <IconButton>
+                                <CalculateOutlined />
+                            </IconButton>
+                        </InputAdornment>
                     }
                 />
             </FormControl>
-
             <CalculatorDialog
-                data-testid={CALCULATOR_DIALOG_DATA_TEST_ID}
                 isOpen={isOpenCalculatorDialog}
                 handleClose={handleCloseCalculatorDialog}
+                handleConfirm={handleConfirm}
+                inputValue={inputValue.toString()}
+                handleInputChange={(value: string) => handleInputChange(Number(value))}
             />
         </Box>
-    )
-}
+    );
+};
 
-export default Calculator
+export default Calculator;

@@ -1,10 +1,7 @@
-import React from 'react'
-import styles from '../../style/calculator.module.css'
-import {
-    Box,
-    OutlinedInput,
-} from '@mui/material'
-import { CalculatorKeyboard } from '../index'
+import React, { FC } from 'react';
+import styles from '../../style/calculator.module.css';
+import { Box, OutlinedInput } from '@mui/material';
+import { CalculatorKeyboard } from '../index';
 import {
     CALCULATOR_FRAME_DATA_TEST_ID,
     CALCULATOR_RANGE_VALUE_DATA_TEST_ID,
@@ -13,11 +10,38 @@ import {
     CALCULTATOR_TEXT_INPUT_RANGE_MAX_DATA_TEST_ID,
     CALCULTATOR_TEXT_INPUT_RANGE_MIN,
     CALCULTATOR_TEXT_INPUT_RANGE_MIN_DATA_TEST_ID
-} from '../../constant'
+} from '../../constant';
+import { TCaculatorFrame } from '../../types/calculatorType';
 
-const inputValue: number = 1200;
 
-const CalculatorFrame = (): JSX.Element => {
+const CalculatorFrame: FC<TCaculatorFrame> = ({
+    inputValue,
+    handleInputChange
+}) => {
+    const handleButtonClick = (value: string): void => {
+        // Clear button: reset input
+        if (value === 'clear') {
+            handleInputChange('');
+        }
+        // Delete button: remove last character
+        else if (value === 'delete') {
+            handleInputChange(inputValue.slice(0, -1));
+        }
+        // Toggle sign button
+        else if (value === '+/-') {
+            if (!inputValue) {
+                handleInputChange('-');  // Empty -> add minus
+            } else if (inputValue.startsWith('-')) {
+                handleInputChange(inputValue.slice(1));  // Remove minus
+            } else {
+                handleInputChange('-' + inputValue);  // Add minus
+            }
+        }
+        // Default: append value to input
+        else {
+            handleInputChange(inputValue + value);
+        }
+    };
     return (
         <Box
             data-testid={CALCULATOR_FRAME_DATA_TEST_ID}
@@ -26,10 +50,9 @@ const CalculatorFrame = (): JSX.Element => {
             <OutlinedInput
                 data-testid={CALCULATOR_TEXT_FIELD_INPUT_DATA_TEST_ID}
                 className={styles.calculatorTextField}
-                type='number'
-                defaultValue={0}
+                type="text"
+                value={inputValue}
                 readOnly
-            // value={inputValue}
             />
             <Box
                 data-testid={CALCULATOR_RANGE_VALUE_DATA_TEST_ID}
@@ -37,22 +60,20 @@ const CalculatorFrame = (): JSX.Element => {
             >
                 <span
                     data-testid={CALCULTATOR_TEXT_INPUT_RANGE_MIN_DATA_TEST_ID}
-                    className={inputValue < 0 ? styles.minValueErr : styles.minValue}
                 >
                     {CALCULTATOR_TEXT_INPUT_RANGE_MIN}
                 </span>
                 <span
                     data-testid={CALCULTATOR_TEXT_INPUT_RANGE_MAX_DATA_TEST_ID}
-                    className={inputValue > 1000 ? styles.maxValueErr : styles.maxValue}
                 >
                     {CALCULTATOR_TEXT_INPUT_RANGE_MAX}
                 </span>
             </Box>
             <Box>
-                <CalculatorKeyboard />
+                <CalculatorKeyboard onButtonClick={handleButtonClick} />
             </Box>
         </Box>
-    )
-}
+    );
+};
 
-export default CalculatorFrame
+export default CalculatorFrame;
