@@ -26,7 +26,6 @@
 
 .calculatorRange {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     padding: 0.5rem 0.25rem;
     color: gray;
@@ -35,6 +34,28 @@
 }
 
 .calculatorKeyboard {
-    width: 100%;
-    margin-top: 1rem;
+    margin-top: 0.25rem;
+    background: rgba(230, 228, 228, 0.7);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    grid-template-rows: repeat(12, 1fr);
+}
+
+.gridContainerAction, .gridContainerNumber {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 0.5rem;
+}
+
+.gridContainerAction .clearButton {
+    grid-column: span 8;
+}
+
+.gridContainerAction .deleteButton {
+    grid-column: span 4;
+}
+
+.gridContainerNumber {
+    margin-top: 0.5rem;
+    grid-template-columns: repeat(3, 1fr);
 }

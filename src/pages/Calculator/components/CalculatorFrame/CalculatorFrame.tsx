@@ -26,7 +26,7 @@ const CalculatorFrame = (): JSX.Element => {
                 data-testid={CALCULATOR_TEXT_FIELD_INPUT_DATA_TEST_ID}
                 className={styles.calculatorTextField}
             />
-            <Stack
+            <Box
                 data-testid={CALCULATOR_RANGE_VALUE_DATA_TEST_ID}
                 className={styles.calculatorRange}
             >
@@ -42,8 +42,10 @@ const CalculatorFrame = (): JSX.Element => {
                 >
                     {CALCULTATOR_TEXT_INPUT_RANGE_MAX}
                 </span>
-            </Stack>
-            <CalculatorKeyboard />
+            </Box>
+            <Box>
+                <CalculatorKeyboard />
+            </Box>
         </Box>
     )
 }

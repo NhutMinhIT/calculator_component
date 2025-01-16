@@ -5,7 +5,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 const AClearButton = (): JSX.Element => {
     return (
         <KeyboardIconButton>
-            <DeleteForeverIcon fontSize='small' />
+            <DeleteForeverIcon fontSize='medium' />
         </KeyboardIconButton>
 
     )
