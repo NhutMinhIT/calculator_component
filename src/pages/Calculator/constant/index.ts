@@ -23,33 +23,33 @@ export const CALCULTATOR_TEXT_INPUT_RANGE_MIN_DATA_TEST_ID: string = "calculator
 export const CALCULTATOR_TEXT_INPUT_RANGE_MAX_DATA_TEST_ID: string = "calculatorInputRangeMax";
 
 //CalculatorKeyboard
-export const CALCULATOR_BUTTON_TEXT_NUMBER_ONE_KEYBOARD: number = 1;
-export const CALCULATOR_BUTTON_TEXT_NUMBER_TWO_KEYBOARD: number = 2;
-export const CALCULATOR_BUTTON_TEXT_NUMBER_THREE_KEYBOARD: number = 3;
-export const CALCULATOR_BUTTON_TEXT_NUMBER_FOUR_KEYBOARD: number = 4;
-export const CALCULATOR_BUTTON_TEXT_NUMBER_FIVE_KEYBOARD: number = 5;
-export const CALCULATOR_BUTTON_TEXT_NUMBER_SIX_KEYBOARD: number = 6;
-export const CALCULATOR_BUTTON_TEXT_NUMBER_SEVEN_KEYBOARD: number = 7;
-export const CALCULATOR_BUTTON_TEXT_NUMBER_EIGHT_KEYBOARD: number = 8;
-export const CALCULATOR_BUTTON_TEXT_NUMBER_NINE_KEYBOARD: number = 9;
-export const CALCULATOR_BUTTON_TEXT_NUMBER_ZERO_KEYBOARD: number = 0;
+export const CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_ONE: number = 1;
+export const CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_TWO: number = 2;
+export const CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_THREE: number = 3;
+export const CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_FOUR: number = 4;
+export const CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_FIVE: number = 5;
+export const CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_SIX: number = 6;
+export const CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_SEVEN: number = 7;
+export const CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_EIGHT: number = 8;
+export const CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_NINE: number = 9;
+export const CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_ZERO: number = 0;
 
 // Operator Keyboard
-export const CALCULATOR_BUTTON_TEXT_DECIMAL_KEYBOARD: string = ".";
-export const CALCULATOR_BUTTON_TEXT_PLUS_OR_MINUS_KEYBOARD: string = "+/-";
+export const CALCULATOR_KEYBOARD_BUTTON_TEXT_DECIMAL: string = ".";
+export const CALCULATOR_KEYBOARD_BUTTON_TEXT_PLUS_OR_MINUS: string = "+/-";
 
 //kEYBOARD DATA TEST ID
 export const CALCULATOR_KEYBOARD_BUTTON_LIST_DATA_TEST_ID: string = "calculatorKeyboard";
-export const CALCULATOR_KEYBOARD_BUTTON_ONE_DATA_TEST_ID: string = "calculatorKeyboardButtonOne";
-export const CALCULATOR_KEYBOARD_BUTTON_TWO_DATA_TEST_ID: string = "calculatorKeyboardButtonTwo";
-export const CALCULATOR_KEYBOARD_BUTTON_THREE_DATA_TEST_ID: string = "calculatorKeyboardButtonThree";
-export const CALCULATOR_KEYBOARD_BUTTON_FOUR_DATA_TEST_ID: string = "calculatorKeyboardButtonFour";
-export const CALCULATOR_KEYBOARD_BUTTON_FIVE_DATA_TEST_ID: string = "calculatorKeyboardButtonFive";
-export const CALCULATOR_KEYBOARD_BUTTON_SIX_DATA_TEST_ID: string = "calculatorKeyboardButtonSix";
-export const CALCULATOR_KEYBOARD_BUTTON_SEVEN_DATA_TEST_ID: string = "calculatorKeyboardButtonSeven";
-export const CALCULATOR_KEYBOARD_BUTTON_EIGHT_DATA_TEST_ID: string = "calculatorKeyboardButtonEight";
-export const CALCULATOR_KEYBOARD_BUTTON_NINE_DATA_TEST_ID: string = "calculatorKeyboardButtonNine";
-export const CALCULATOR_KEYBOARD_BUTTON_ZERO_DATA_TEST_ID: string = "calculatorKeyboardButtonZero";
+export const CALCULATOR_KEYBOARD_BUTTON_NUMBER_ONE_DATA_TEST_ID: string = "calculatorKeyboardButtonOne";
+export const CALCULATOR_KEYBOARD_BUTTON_NUMBER_TWO_DATA_TEST_ID: string = "calculatorKeyboardButtonTwo";
+export const CALCULATOR_KEYBOARD_BUTTON_NUMBER_THREE_DATA_TEST_ID: string = "calculatorKeyboardButtonThree";
+export const CALCULATOR_KEYBOARD_BUTTON_NUMBER_FOUR_DATA_TEST_ID: string = "calculatorKeyboardButtonFour";
+export const CALCULATOR_KEYBOARD_BUTTON_NUMBER_FIVE_DATA_TEST_ID: string = "calculatorKeyboardButtonFive";
+export const CALCULATOR_KEYBOARD_BUTTON_NUMBER_SIX_DATA_TEST_ID: string = "calculatorKeyboardButtonSix";
+export const CALCULATOR_KEYBOARD_BUTTON_NUMBER_SEVEN_DATA_TEST_ID: string = "calculatorKeyboardButtonSeven";
+export const CALCULATOR_KEYBOARD_BUTTON_NUMBER_EIGHT_DATA_TEST_ID: string = "calculatorKeyboardButtonEight";
+export const CALCULATOR_KEYBOARD_BUTTON_NUMBER_NINE_DATA_TEST_ID: string = "calculatorKeyboardButtonNine";
+export const CALCULATOR_KEYBOARD_BUTTON_NUMBER_ZERO_DATA_TEST_ID: string = "calculatorKeyboardButtonZero";
 export const CALCULATOR_KEYBOARD_BUTTON_DECIMAL_DATA_TEST_ID: string = "calculatorKeyboardButtonDecimal";
 export const CALCULATOR_KEYBOARD_BUTTON_PLUS_OR_MINUS_DATA_TEST_ID: string = "calculatorKeyboardButtonPlusOrMinus";
 export const CALCULATOR_KEYBOARD_BUTTON_CLEAR_DATA_TEST_ID: string = "calculatorKeyboardButtonClear";
