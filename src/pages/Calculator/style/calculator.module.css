@@ -24,10 +24,12 @@
 }
 
 .minValueErr, .maxValueErr {
+    font-size: 14px;
     color: red;
 }
 
 .minValue, .maxValue {
+    font-size: 14px;
     color: gray;
 }
 
