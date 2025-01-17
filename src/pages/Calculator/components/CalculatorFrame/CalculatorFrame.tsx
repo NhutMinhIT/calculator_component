@@ -1,15 +1,18 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import styles from '../../style/calculator.module.css';
 import { Box, OutlinedInput } from '@mui/material';
 import { CalculatorKeyboard } from '../index';
 import {
     CALCULATOR_FRAME_DATA_TEST_ID,
+    CALCULATOR_INPUT_LENGTH,
     CALCULATOR_RANGE_VALUE_DATA_TEST_ID,
     CALCULATOR_TEXT_FIELD_INPUT_DATA_TEST_ID,
     CALCULTATOR_TEXT_INPUT_RANGE_MAX,
     CALCULTATOR_TEXT_INPUT_RANGE_MAX_DATA_TEST_ID,
     CALCULTATOR_TEXT_INPUT_RANGE_MIN,
-    CALCULTATOR_TEXT_INPUT_RANGE_MIN_DATA_TEST_ID
+    CALCULTATOR_TEXT_INPUT_RANGE_MIN_DATA_TEST_ID,
+    CALCULTATOR_VALUE_INPUT_RANGE_MAX,
+    CALCULTATOR_VALUE_INPUT_RANGE_MIN
 } from '../../constant';
 import { TCaculatorFrame } from '../../types/calculatorType';
 import { handleCalculatorButton } from '../../util/handleCalculatorButton';
@@ -45,13 +48,15 @@ const CalculatorFrame: FC<TCaculatorFrame> = ({
                 className={styles.calculatorRange}
             >
                 <span
-                    className={(Number(inputValue) < 0 || inputValue.length > 4) ? styles.minValueErr : styles.minValue}
+                    className={Number(inputValue) < CALCULTATOR_VALUE_INPUT_RANGE_MIN ? styles.minValueErr : styles.minValue}
                     data-testid={CALCULTATOR_TEXT_INPUT_RANGE_MIN_DATA_TEST_ID}
                 >
                     {CALCULTATOR_TEXT_INPUT_RANGE_MIN}
                 </span>
                 <span
-                    className={(Number(inputValue) > 1000 || inputValue.length > 4) ? styles.maxValueErr : styles.maxValue}
+                    className={(Number(inputValue) > CALCULTATOR_VALUE_INPUT_RANGE_MAX
+                        || inputValue.length > CALCULATOR_INPUT_LENGTH && Number(inputValue) > CALCULTATOR_VALUE_INPUT_RANGE_MAX)
+                        ? styles.maxValueErr : styles.maxValue}
                     data-testid={CALCULTATOR_TEXT_INPUT_RANGE_MAX_DATA_TEST_ID}
                 >
                     {CALCULTATOR_TEXT_INPUT_RANGE_MAX}
@@ -64,4 +69,4 @@ const CalculatorFrame: FC<TCaculatorFrame> = ({
     );
 };
 
-export default CalculatorFrame;
+export default memo(CalculatorFrame);

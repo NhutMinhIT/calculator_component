@@ -18,7 +18,10 @@ export const CALCULATOR_FRAME_DATA_TEST_ID: string = "calculatorFrame";
 export const CALCULATOR_TEXT_FIELD_INPUT_DATA_TEST_ID: string = "calculatorInput";
 export const CALCULATOR_RANGE_VALUE_DATA_TEST_ID: string = "calculatorRangeValue";
 export const CALCULTATOR_TEXT_INPUT_RANGE_MIN: number = 0;
+export const CALCULTATOR_VALUE_INPUT_RANGE_MIN: number = 0;
 export const CALCULTATOR_TEXT_INPUT_RANGE_MAX: number = 1000;
+export const CALCULTATOR_VALUE_INPUT_RANGE_MAX: number = 1000;
+export const CALCULATOR_INPUT_LENGTH: number = 4;
 export const CALCULTATOR_TEXT_INPUT_RANGE_MIN_DATA_TEST_ID: string = "calculatorInputRangeMin";
 export const CALCULTATOR_TEXT_INPUT_RANGE_MAX_DATA_TEST_ID: string = "calculatorInputRangeMax";
 
