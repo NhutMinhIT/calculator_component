@@ -35,7 +35,9 @@ const CalculatorFrame: FC<TCaculatorFrame> = ({
             <div
                 data-testid={CALCULATOR_TEXT_FIELD_INPUT_DATA_TEST_ID}
                 className={styles.calculatorInputValue}
-            >{inputValue}</div>
+            >
+                {inputValue}
+            </div>
             <Box
                 data-testid={CALCULATOR_RANGE_VALUE_DATA_TEST_ID}
                 className={styles.calculatorRange}

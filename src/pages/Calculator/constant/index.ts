@@ -62,3 +62,4 @@ export const CALCULATOR_KEYBOARD_BUTTON_DELETE_DATA_TEST_ID: string = "calculato
 export const CALCULATOR_EMPTRY_VALUE: string = '';
 export const CALCULATOR_CURRENT_INPUT_LENGTH: number = 2;
 export const CALCULATOR_MINUS: string = '-';
+export const CALCULATOR_DECIMAL: string = '.';
