@@ -44,6 +44,7 @@ const CalculatorDialog: FC<TCalculatorDialog> = ({
             <DialogTitle
                 id={CALCULATOR_DIALOG_TITLE_ID}
                 data-testid={CALCULATOR_DIALOG_TITLE_DATA_TEST_ID}
+                className={styles.dialogTitle}
             >
                 {CALCULATOR_DIALOG_TITLE}
             </DialogTitle>

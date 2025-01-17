@@ -10,10 +10,10 @@ const KeyboardIconButton = styled(IconButton)
         color: black;
         border-radius: 6px;
         padding: 15px;
-        box-shadow: 0 0 0.5rem 0.1rem rgba(204, 203, 203, 0.5);
+        box-shadow: 0 0 0.5rem 0.1rem rgba(201, 198, 198, 0.5);
     }
     &.MuiIconButton-root:hover{
-        background-color:rgba(245, 245, 245, 0.5);
+        background-color:rgba(255, 255, 255, 0.7);
     }
         
     `

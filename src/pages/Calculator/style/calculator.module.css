@@ -3,6 +3,12 @@
     margin: 0;
 }
 
+.dialogTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+}
+
 .btnActionCalculator {
     width: auto;
     min-width: 6rem !important;
@@ -13,14 +19,23 @@
 .calculatorFrame {
     width: auto;
     border: 1px solid gray;
-    background: rgba(175, 173, 173, 0.3);
+    background: rgba(236, 234, 234, 0.3);
     border-radius: 0.5rem;
     padding: 0.5rem 0.25rem;
 }
 
-.calculatorTextField {
-    width: 100%;
-    background: rgba(175, 173, 173, 0.3);
+.calculatorInputValue {
+    width: auto;
+    padding: 1rem 1rem;
+    font-size: 16px;
+    text-align: right;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: rgba(240, 236, 236, 0.9);
+    background: rgba(236, 234, 234, 0.9);
+    color: rgb(37, 37, 37);
+    letter-spacing: 1.25px;
+    line-height: 20px;
 }
 
 .minValueErr, .maxValueErr {
@@ -36,7 +51,7 @@
 .calculatorRange {
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 0.25rem;
+    padding: 0.5rem 1rem;
     color: gray;
     font-weight: 600;
     font-size: 1rem;
@@ -44,7 +59,7 @@
 
 .calculatorKeyboard {
     margin-top: 0.25rem;
-    background: rgba(175, 173, 173, 0.6);
+    background: rgba(173, 173, 173, 0.4);
     padding: 0.5rem;
     border-radius: 0.5rem;
     grid-template-rows: repeat(12, 1fr);

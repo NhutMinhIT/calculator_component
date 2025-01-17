@@ -1,7 +1,7 @@
 import React, { FC, memo } from 'react'
 import { KeyboardIconButton } from '../../index'
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { TCalculatorButton } from '../../../types/calculatorType';
+import { DeleteForeverOutlined } from '@mui/icons-material';
 
 const AClearButton: FC<TCalculatorButton> = ({
     onClick
@@ -10,7 +10,7 @@ const AClearButton: FC<TCalculatorButton> = ({
         <KeyboardIconButton
             onClick={onClick}
         >
-            <DeleteForeverIcon fontSize='medium' />
+            <DeleteForeverOutlined fontSize='medium' />
         </KeyboardIconButton>
 
     )

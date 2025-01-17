@@ -32,16 +32,10 @@ const CalculatorFrame: FC<TCaculatorFrame> = ({
             data-testid={CALCULATOR_FRAME_DATA_TEST_ID}
             className={styles.calculatorFrame}
         >
-            <OutlinedInput
+            <div
                 data-testid={CALCULATOR_TEXT_FIELD_INPUT_DATA_TEST_ID}
-                className={styles.calculatorTextField}
-                type="text"
-                value={inputValue}
-                readOnly
-                inputProps={{
-                    style: { textAlign: 'right' }
-                }}
-            />
+                className={styles.calculatorInputValue}
+            >{inputValue}</div>
             <Box
                 data-testid={CALCULATOR_RANGE_VALUE_DATA_TEST_ID}
                 className={styles.calculatorRange}
