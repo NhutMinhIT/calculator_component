@@ -48,5 +48,12 @@ describe('Calculator component', () => {
         cy.get(`[${dialogDataTestId}]`).should('exist');
         cy.get(`[${dialogCancelDataTestId}]`).click();
     });
+    it('should handle action ok successfully', () => {
+        const value = 1;
+        cy.get(`[${inputDataTestId}]`).click();
+        cy.get(`[${dialogDataTestId}]`).should('exist');
+        cy.get(`[${dialogDataTestId}]`).find('button').contains(value).click();
+        cy.get(`[${dialogOkDataTestId}]`).click();
+    });
 
 });
