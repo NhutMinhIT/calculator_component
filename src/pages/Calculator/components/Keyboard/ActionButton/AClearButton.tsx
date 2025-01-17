@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, memo } from 'react'
 import { KeyboardIconButton } from '../../index'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { TCalculatorButton } from '../../../types/calculatorType';
@@ -16,4 +16,4 @@ const AClearButton: FC<TCalculatorButton> = ({
     )
 }
 
-export default AClearButton
+export default memo(AClearButton);

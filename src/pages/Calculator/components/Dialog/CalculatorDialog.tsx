@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, memo } from 'react'
 import styles from '../../style/calculator.module.css'
 import {
     Button,
@@ -79,4 +79,4 @@ const CalculatorDialog: FC<TCalculatorDialog> = ({
     )
 }
 
-export default CalculatorDialog
+export default memo(CalculatorDialog)

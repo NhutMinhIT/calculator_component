@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, memo } from 'react'
 import { KeyboardIconButton } from '../../index'
 import BackspaceOutlinedIcon from '@mui/icons-material/BackspaceOutlined';
 import { TCalculatorButton } from '../../../types/calculatorType';
@@ -15,4 +15,4 @@ const ADeleteButton: FC<TCalculatorButton> = ({
     )
 }
 
-export default ADeleteButton
+export default memo(ADeleteButton)
