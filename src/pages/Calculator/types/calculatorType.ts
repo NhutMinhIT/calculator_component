@@ -27,7 +27,7 @@ export enum ECalculatorValue {
 }
 export enum ECalculatorOperator {
     PlusOrMinus = '+/-',
-    DOT = '.',
+    DECIMAL = '.',
     CLEAR = 'clear',
     DELETE = 'delete',
 }
@@ -57,4 +57,8 @@ export type TCaculatorFrame = {
 
 export type TCalculatorButton = {
     onClick: () => void;
+}
+
+export type TCalculatorKeyboardProps = {
+    onButtonClick: (value: string) => void;
 }

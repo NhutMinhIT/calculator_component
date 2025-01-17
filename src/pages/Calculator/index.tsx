@@ -10,6 +10,10 @@ import {
 import { CalculateOutlined } from '@mui/icons-material';
 import CalculatorDialog from './components/Dialog/CalculatorDialog';
 import { useCalculator } from './hooks/useCalculator';
+import {
+    CALCULATOR_TEXT_FIELD_ID,
+    CALCULATOR_TEXT_FIELD_LABEL
+} from './constant';
 
 const Calculator = (): JSX.Element => {
     const {
@@ -25,11 +29,14 @@ const Calculator = (): JSX.Element => {
     return (
         <Box>
             <FormControl>
-                <InputLabel htmlFor="calculator-input">Enter Value</InputLabel>
+                <InputLabel
+                    htmlFor={CALCULATOR_TEXT_FIELD_ID}
+                >
+                    {CALCULATOR_TEXT_FIELD_LABEL}
+                </InputLabel>
                 <OutlinedInput
-                    id="calculator-input"
+                    id={CALCULATOR_TEXT_FIELD_ID}
                     value={finalValue}
-                    readOnly
                     onClick={handleOpenCalculatorDialog}
                     endAdornment={
                         <InputAdornment position="end">
