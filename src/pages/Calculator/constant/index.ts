@@ -1,7 +1,7 @@
 export const CALCULATOR_PAGE_DATA_TEST_ID: string = "calculatorPage";
 export const CALCULATOR_TEXT_FIELD_LABEL: string = "Calculator";
 export const CALCULATOR_TEXT_FIELD_ID: string = "calculatorInput";
-export const CALCULATOR_TEXT_FIELD_DATA_TEST_ID: string = "calculatorInput";
+export const CALCULATOR_TEXT_FIELD_DATA_TEST_ID: string = "calculatorInputTestId";
 
 //CalculatorDialog
 export const CALCULATOR_DIALOG_BUTTON_TEXT_ACTION_OK: string = "OK";

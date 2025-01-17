@@ -11,6 +11,9 @@ import { CalculateOutlined } from '@mui/icons-material';
 import CalculatorDialog from './components/Dialog/CalculatorDialog';
 import { useCalculator } from './hooks/useCalculator';
 import {
+    CALCULATOR_DIALOG_DATA_TEST_ID,
+    CALCULATOR_PAGE_DATA_TEST_ID,
+    CALCULATOR_TEXT_FIELD_DATA_TEST_ID,
     CALCULATOR_TEXT_FIELD_ID,
     CALCULATOR_TEXT_FIELD_LABEL
 } from './constant';
@@ -27,7 +30,9 @@ const Calculator = (): JSX.Element => {
     } = useCalculator();
 
     return (
-        <Box>
+        <Box
+            data-testid={CALCULATOR_PAGE_DATA_TEST_ID}
+        >
             <FormControl>
                 <InputLabel
                     htmlFor={CALCULATOR_TEXT_FIELD_ID}
@@ -35,6 +40,7 @@ const Calculator = (): JSX.Element => {
                     {CALCULATOR_TEXT_FIELD_LABEL}
                 </InputLabel>
                 <OutlinedInput
+                    data-testid={CALCULATOR_TEXT_FIELD_DATA_TEST_ID}
                     id={CALCULATOR_TEXT_FIELD_ID}
                     value={finalValue}
                     onClick={handleOpenCalculatorDialog}
@@ -48,6 +54,7 @@ const Calculator = (): JSX.Element => {
                 />
             </FormControl>
             <CalculatorDialog
+                data-testid={CALCULATOR_DIALOG_DATA_TEST_ID}
                 isOpen={isOpenCalculatorDialog}
                 handleClose={handleCloseCalculatorDialog}
                 handleConfirm={handleConfirm}

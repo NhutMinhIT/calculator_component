@@ -33,7 +33,6 @@ export const handleCalculatorButton = (value: string, currentInput: string): str
         }
         return CALCULATOR_MINUS + currentInput;  // Add minus
     }
-
     // Default: append value to input
     return currentInput + value;
 };
