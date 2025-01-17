@@ -7,16 +7,21 @@ import {
     DialogContent,
     DialogTitle
 } from '@mui/material'
-import { ECalCulatorButtonColor, TCalculatorDialog } from '../../types/calculatorType'
+import {
+    ECalCulatorButtonColor,
+    TCalculatorDialog
+} from '../../types/calculatorType'
 import {
     CALCULATOR_DIALOG_BUTTON_TEXT_ACTION_CANCEL,
     CALCULATOR_DIALOG_BUTTON_TEXT_ACTION_OK,
+    CALCULATOR_DIALOG_TITLE,
+    CALCULATOR_DIALOG_TITLE_ID,
     CALCULATOR_DIALOG_ACTION_OK_DATA_TEST_ID,
     CALCULATOR_DIALOG_DATA_TEST_ID,
-    CALCULATOR_DIALOG_TITLE,
+    CALCULATOR_DIALOG_ACTION_CANCEL_DATA_TEST_ID,
     CALCULATOR_DIALOG_TITLE_DATA_TEST_ID,
-    CALCULATOR_DIALOG_TITLE_ID,
-    CALCULATOR_DIALOG_ACTION_CANCEL_DATA_TEST_ID
+    CALCULTATOR_VALUE_INPUT_RANGE_MIN,
+    CALCULTATOR_VALUE_INPUT_RANGE_MAX,
 } from '../../constant';
 import { ECalendarButtonVariant } from '../../../Calendar/types'
 import CalculatorFrame from '../CalculatorFrame/CalculatorFrame';
@@ -63,7 +68,8 @@ const CalculatorDialog: FC<TCalculatorDialog> = ({
                     variant={ECalendarButtonVariant.CONTAINED}
                     color={ECalCulatorButtonColor.PRIMARY}
                     className={styles.btnActionCalculator}
-                    disabled={Number(inputValue) < 0 || Number(inputValue) > 1000}
+                    disabled={Number(inputValue) <= CALCULTATOR_VALUE_INPUT_RANGE_MIN
+                        || Number(inputValue) > CALCULTATOR_VALUE_INPUT_RANGE_MAX}
                     onClick={handleConfirm}
                 >
                     {CALCULATOR_DIALOG_BUTTON_TEXT_ACTION_OK}
