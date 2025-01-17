@@ -26,7 +26,7 @@ export enum ECalculatorValue {
     ZERO = 0,
 }
 export enum ECalculatorOperator {
-    PlusOrMinus = '+/-',
+    PLUSORMINUS = '+/-',
     DECIMAL = '.',
     CLEAR = 'clear',
     DELETE = 'delete',

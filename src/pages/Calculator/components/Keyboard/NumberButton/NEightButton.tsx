@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { KeyboardButton } from '../../index'
 import {
     CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_EIGHT,
-    CALCULATOR_KEYBOARD_BUTTON_NUMBER_EIGHT_DATA_TEST_ID,
 } from '../../../constant'
+import { TCalculatorButton } from '../../../types/calculatorType'
 
-const NEightButton = (): JSX.Element => {
+const NEightButton: FC<TCalculatorButton> = ({
+    onClick
+}) => {
     return (
         <KeyboardButton
-            data-testid={CALCULATOR_KEYBOARD_BUTTON_NUMBER_EIGHT_DATA_TEST_ID}
+            onClick={onClick}
         >
             {CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_EIGHT}
         </KeyboardButton>

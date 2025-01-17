@@ -24,7 +24,7 @@ export const handleCalculatorButton = (value: string, currentInput: string): str
     }
 
     // Toggle sign button
-    if (value === ECalculatorOperator.PlusOrMinus) {
+    if (value === ECalculatorOperator.PLUSORMINUS) {
         if (!currentInput || currentInput === CALCULATOR_MINUS) {
             return CALCULATOR_EMPTRY_VALUE; // Return empty if only minus sign
         }
@@ -32,9 +32,6 @@ export const handleCalculatorButton = (value: string, currentInput: string): str
             return currentInput.slice(1);  // Remove minus
         }
         return CALCULATOR_MINUS + currentInput;  // Add minus
-    }
-
-    if (value === ECalculatorOperator.DECIMAL) {
     }
 
     // Default: append value to input
