@@ -48,12 +48,89 @@ describe('Calculator component', () => {
         cy.get(`[${dialogDataTestId}]`).should('exist');
         cy.get(`[${dialogCancelDataTestId}]`).click();
     });
-    it('should handle action ok successfully', () => {
+
+    //handle action with button value
+    it('should handle action ok successfully (value 1)', () => {
         const value = 1;
         cy.get(`[${inputDataTestId}]`).click();
         cy.get(`[${dialogDataTestId}]`).should('exist');
         cy.get(`[${dialogDataTestId}]`).find('button').contains(value).click();
         cy.get(`[${dialogOkDataTestId}]`).click();
+        cy.wait(1000);
+    });
+    it('should handle action ok successfully (value 2)', () => {
+        const value = 2;
+        cy.get(`[${inputDataTestId}]`).click();
+        cy.get(`[${dialogDataTestId}]`).should('exist');
+        cy.get(`[${dialogDataTestId}]`).find('button').contains(value).click();
+        cy.wait(1000);
+    });
+    it('should handle action ok successfully (value 3)', () => {
+        const value = 3;
+        cy.get(`[${inputDataTestId}]`).click();
+        cy.get(`[${dialogDataTestId}]`).should('exist');
+        cy.get(`[${dialogDataTestId}]`).find('button').contains(value).click();
+        cy.wait(1000);
+    });
+    it('should handle action ok successfully (value 4)', () => {
+        const value = 4;
+        cy.get(`[${inputDataTestId}]`).click();
+        cy.get(`[${dialogDataTestId}]`).should('exist');
+        cy.get(`[${dialogDataTestId}]`).find('button').contains(value).click();
+        cy.wait(1000);
+    });
+    it('should handle action ok successfully (value 5)', () => {
+        const value = 5;
+        cy.get(`[${inputDataTestId}]`).click();
+        cy.get(`[${dialogDataTestId}]`).should('exist');
+        cy.get(`[${dialogDataTestId}]`).find('button').contains(value).click();
+        cy.wait(1000);
+    });
+    it('should handle action ok successfully (value 6)', () => {
+        const value = 6;
+        cy.get(`[${inputDataTestId}]`).click();
+        cy.get(`[${dialogDataTestId}]`).should('exist');
+        cy.get(`[${dialogDataTestId}]`).find('button').contains(value).click();
+        cy.wait(1000);
+    });
+    it('should handle action ok successfully (value 7)', () => {
+        const value = 7;
+        cy.get(`[${inputDataTestId}]`).click();
+        cy.get(`[${dialogDataTestId}]`).should('exist');
+        cy.get(`[${dialogDataTestId}]`).find('button').contains(value).click();
+        cy.wait(1000);
+    });
+    it('should handle action ok successfully (value 8)', () => {
+        const value = 8;
+        cy.get(`[${inputDataTestId}]`).click();
+        cy.get(`[${dialogDataTestId}]`).should('exist');
+        cy.get(`[${dialogDataTestId}]`).find('button').contains(value).click();
+        cy.wait(1000);
+    });
+    it('should handle action ok successfully (value 9)', () => {
+        const value = 9;
+        cy.get(`[${inputDataTestId}]`).click();
+        cy.get(`[${dialogDataTestId}]`).should('exist');
+        cy.get(`[${dialogDataTestId}]`).find('button').contains(value).click();
+        cy.wait(1000);
+    });
+    it('should handle action ok successfully (value 0)', () => {
+        const value = 0;
+        cy.get(`[${inputDataTestId}]`).click();
+        cy.get(`[${dialogDataTestId}]`).should('exist');
+        cy.get(`[${dialogDataTestId}]`).find('button').contains(value).click();
+        cy.wait(1000);
+    });
+
+    //handle action with button operator
+    it('Test disable button OK', () => {
+        const number = 1;
+        const value = '+/-';
+        cy.get(`[${inputDataTestId}]`).click();
+        cy.get(`[${dialogDataTestId}]`).should('exist');
+        cy.get(`[${dialogDataTestId}]`).find('button').contains(number).click();
+        cy.get(`[${dialogDataTestId}]`).find('button').contains(value).click();
+        cy.wait(1000);
     });
 
 });
