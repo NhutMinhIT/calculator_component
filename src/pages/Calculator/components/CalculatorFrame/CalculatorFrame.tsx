@@ -54,8 +54,8 @@ const CalculatorFrame: FC<TCaculatorFrame> = ({
                     {CALCULTATOR_TEXT_INPUT_RANGE_MIN}
                 </span>
                 <span
-                    className={(Number(inputValue) > CALCULTATOR_VALUE_INPUT_RANGE_MAX
-                        || inputValue.length > CALCULATOR_INPUT_LENGTH) ? styles.maxValueErr : styles.maxValue}
+                    className={
+                        Number(inputValue) > CALCULTATOR_VALUE_INPUT_RANGE_MAX ? styles.maxValueErr : styles.maxValue}
                     data-testid={CALCULTATOR_TEXT_INPUT_RANGE_MAX_DATA_TEST_ID}
                 >
                     {CALCULTATOR_TEXT_INPUT_RANGE_MAX}

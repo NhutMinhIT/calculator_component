@@ -1,7 +1,22 @@
 import React, { FC, memo } from 'react';
 import styles from '../../style/calculator.module.css';
 import { Box } from '@mui/material';
-import { AClearButton, ADeleteButton, NEightButton, NFiveButton, NFourButton, NNineButton, NOneButton, NSevenButton, NSixButton, NThreeButton, NTwoButton, NZeroButton, ODecimalButton, OPlusOrMinusButton } from '../index';
+import {
+    AClearButton,
+    ADeleteButton,
+    NEightButton,
+    NFiveButton,
+    NFourButton,
+    NNineButton,
+    NOneButton,
+    NSevenButton,
+    NSixButton,
+    NThreeButton,
+    NTwoButton,
+    NZeroButton,
+    ODecimalButton,
+    OPlusOrMinusButton
+} from '../index';
 import { ECalculatorOperator, TCalculatorKeyboardProps } from '../../types/calculatorType';
 import {
     //test id

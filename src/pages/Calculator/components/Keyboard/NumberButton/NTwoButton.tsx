@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, memo } from 'react'
 import {
     KeyboardButton
 } from '../../index'
@@ -19,4 +19,4 @@ const NTwoButton: FC<TCalculatorButton> = ({
     )
 }
 
-export default NTwoButton
+export default memo(NTwoButton)

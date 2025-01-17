@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, memo } from 'react'
 import { KeyboardButton } from '../../index'
 import {
     CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_SEVEN,
@@ -17,4 +17,4 @@ const NSevenButton: FC<TCalculatorButton> = ({
     )
 }
 
-export default NSevenButton
+export default memo(NSevenButton);

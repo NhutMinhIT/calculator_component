@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import {
     CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_ONE
 } from '../../../constant'
@@ -18,4 +18,4 @@ const NOneButton: FC<TCalculatorButton> = ({
     )
 }
 
-export default NOneButton
+export default memo(NOneButton);
