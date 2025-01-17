@@ -35,11 +35,11 @@ export enum ECalculatorOperator {
 
 export type TUseCalculator = {
     isOpenCalculatorDialog: boolean;
-    inputValue: string;
-    finalValue: string;
+    inputValue: number;
+    finalValue: number;
     handleOpenCalculatorDialog: () => void;
     handleCloseCalculatorDialog: () => void;
-    handleInputChange: (value: string) => void;
+    handleInputChange: (value: number) => void;
     handleConfirm: () => void;
 }
 

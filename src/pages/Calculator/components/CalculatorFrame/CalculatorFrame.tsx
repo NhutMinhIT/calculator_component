@@ -4,7 +4,6 @@ import { Box, OutlinedInput } from '@mui/material';
 import { CalculatorKeyboard } from '../index';
 import {
     CALCULATOR_FRAME_DATA_TEST_ID,
-    CALCULATOR_INPUT_LENGTH,
     CALCULATOR_RANGE_VALUE_DATA_TEST_ID,
     CALCULATOR_TEXT_FIELD_INPUT_DATA_TEST_ID,
     CALCULTATOR_TEXT_INPUT_RANGE_MAX,
