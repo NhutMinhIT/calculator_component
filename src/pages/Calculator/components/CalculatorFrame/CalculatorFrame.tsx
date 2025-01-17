@@ -45,7 +45,7 @@ const CalculatorFrame: FC<TCaculatorFrame> = ({
                 className={styles.calculatorRange}
             >
                 <span
-                    className={Number(inputValue) < 0 ? styles.minValueErr : styles.minValue}
+                    className={(Number(inputValue) < 0 || inputValue.length > 4) ? styles.minValueErr : styles.minValue}
                     data-testid={CALCULTATOR_TEXT_INPUT_RANGE_MIN_DATA_TEST_ID}
                 >
                     {CALCULTATOR_TEXT_INPUT_RANGE_MIN}

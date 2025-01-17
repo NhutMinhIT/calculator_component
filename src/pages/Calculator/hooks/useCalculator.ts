@@ -6,7 +6,10 @@ export const useCalculator = () => {
     const [finalValue, setFinalValue] = useState<number>(0);
 
     const handleOpenCalculatorDialog = (): void => setIsOpenCalculatorDialog(true);
-    const handleCloseCalculatorDialog = (): void => setIsOpenCalculatorDialog(false);
+    const handleCloseCalculatorDialog = (): void => {
+        setIsOpenCalculatorDialog(false);
+        setInputValue(0);
+    };
 
     const handleInputChange = (value: number) => setInputValue(value);
 
