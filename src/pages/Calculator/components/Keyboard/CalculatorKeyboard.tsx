@@ -17,7 +17,7 @@ import {
     ODecimalButton,
     OPlusOrMinusButton
 } from '../index';
-import { ECalculatorOperator, TCalculatorKeyboardProps } from '../../types/calculatorType';
+import { ECalculatorOperator, ECalculatorValue, TCalculatorKeyboardProps } from '../../types/calculatorType';
 import {
     //test id
     CALCULATOR_KEYBOARD_BUTTON_CLEAR_DATA_TEST_ID,
@@ -35,17 +35,6 @@ import {
     CALCULATOR_KEYBOARD_BUTTON_NUMBER_TWO_DATA_TEST_ID,
     CALCULATOR_KEYBOARD_BUTTON_NUMBER_ZERO_DATA_TEST_ID,
     CALCULATOR_KEYBOARD_BUTTON_PLUS_OR_MINUS_DATA_TEST_ID,
-    //value
-    CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_EIGHT,
-    CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_FIVE,
-    CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_FOUR,
-    CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_NINE,
-    CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_ONE,
-    CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_SEVEN,
-    CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_SIX,
-    CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_THREE,
-    CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_TWO,
-    CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_ZERO
 } from '../../constant';
 
 const CalculatorKeyboard: FC<TCalculatorKeyboardProps> = ({ onButtonClick }) => {
@@ -78,7 +67,7 @@ const CalculatorKeyboard: FC<TCalculatorKeyboardProps> = ({ onButtonClick }) => 
                     className={styles.sevenButton}
                 >
                     <NSevenButton
-                        onClick={() => onButtonClick(CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_SEVEN)}
+                        onClick={() => onButtonClick(ECalculatorValue.SEVEN)}
                     />
                 </div>
                 <div
@@ -86,7 +75,7 @@ const CalculatorKeyboard: FC<TCalculatorKeyboardProps> = ({ onButtonClick }) => 
                     className={styles.eightButton}
                 >
                     <NEightButton
-                        onClick={() => onButtonClick(CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_EIGHT)}
+                        onClick={() => onButtonClick(ECalculatorValue.EIGHT)}
                     />
                 </div>
                 <div
@@ -94,7 +83,7 @@ const CalculatorKeyboard: FC<TCalculatorKeyboardProps> = ({ onButtonClick }) => 
                     className={styles.nineButton}
                 >
                     <NNineButton
-                        onClick={() => onButtonClick(CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_NINE)}
+                        onClick={() => onButtonClick(ECalculatorValue.NINE)}
                     />
                 </div>
                 <div
@@ -102,7 +91,7 @@ const CalculatorKeyboard: FC<TCalculatorKeyboardProps> = ({ onButtonClick }) => 
                     className={styles.fourButton}
                 >
                     <NFourButton
-                        onClick={() => onButtonClick(CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_FOUR)}
+                        onClick={() => onButtonClick(ECalculatorValue.FOUR)}
                     />
                 </div>
                 <div
@@ -110,7 +99,7 @@ const CalculatorKeyboard: FC<TCalculatorKeyboardProps> = ({ onButtonClick }) => 
                     className={styles.fiveButton}
                 >
                     <NFiveButton
-                        onClick={() => onButtonClick(CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_FIVE)}
+                        onClick={() => onButtonClick(ECalculatorValue.FIVE)}
                     />
                 </div>
                 <div
@@ -118,7 +107,7 @@ const CalculatorKeyboard: FC<TCalculatorKeyboardProps> = ({ onButtonClick }) => 
                     className={styles.sixButton}
                 >
                     <NSixButton
-                        onClick={() => onButtonClick(CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_SIX)}
+                        onClick={() => onButtonClick(ECalculatorValue.SIX)}
                     />
                 </div>
                 <div
@@ -127,7 +116,7 @@ const CalculatorKeyboard: FC<TCalculatorKeyboardProps> = ({ onButtonClick }) => 
 
                 >
                     <NOneButton
-                        onClick={() => onButtonClick(CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_ONE)}
+                        onClick={() => onButtonClick(ECalculatorValue.ONE)}
                     />
                 </div>
                 <div
@@ -135,7 +124,7 @@ const CalculatorKeyboard: FC<TCalculatorKeyboardProps> = ({ onButtonClick }) => 
                     className={styles.twoButton}
                 >
                     <NTwoButton
-                        onClick={() => onButtonClick(CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_TWO)}
+                        onClick={() => onButtonClick(ECalculatorValue.TWO)}
                     />
                 </div>
                 <div
@@ -143,7 +132,7 @@ const CalculatorKeyboard: FC<TCalculatorKeyboardProps> = ({ onButtonClick }) => 
                     className={styles.threeButton}
                 >
                     <NThreeButton
-                        onClick={() => onButtonClick(CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_THREE)}
+                        onClick={() => onButtonClick(ECalculatorValue.THREE)}
                     />
                 </div>
                 <div
@@ -159,7 +148,7 @@ const CalculatorKeyboard: FC<TCalculatorKeyboardProps> = ({ onButtonClick }) => 
                     className={styles.zeroButton}
                 >
                     <NZeroButton
-                        onClick={() => onButtonClick(CALCULATOR_KEYBOARD_BUTTON_VALUE_NUMBER_ZERO)}
+                        onClick={() => onButtonClick(ECalculatorValue.ZERO)}
                     />
                 </div>
                 <div
