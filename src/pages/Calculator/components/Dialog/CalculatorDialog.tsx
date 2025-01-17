@@ -22,6 +22,8 @@ import {
     CALCULATOR_DIALOG_TITLE_DATA_TEST_ID,
     CALCULTATOR_VALUE_INPUT_RANGE_MIN,
     CALCULTATOR_VALUE_INPUT_RANGE_MAX,
+    CALCULATOR_DIALOG_CONTENT_DATA_TEST_ID,
+    CALCULATOR_DIALOG_ACTION_DATA_TEST_ID,
 } from '../../constant';
 import { ECalendarButtonVariant } from '../../../Calendar/types'
 import CalculatorFrame from '../CalculatorFrame/CalculatorFrame';
@@ -48,13 +50,17 @@ const CalculatorDialog: FC<TCalculatorDialog> = ({
             >
                 {CALCULATOR_DIALOG_TITLE}
             </DialogTitle>
-            <DialogContent>
+            <DialogContent
+                data-testid={CALCULATOR_DIALOG_CONTENT_DATA_TEST_ID}
+            >
                 <CalculatorFrame
                     inputValue={inputValue}
                     handleInputChange={handleInputChange}
                 />
             </DialogContent>
-            <DialogActions>
+            <DialogActions
+                data-testid={CALCULATOR_DIALOG_ACTION_DATA_TEST_ID}
+            >
                 <Button
                     data-testid={CALCULATOR_DIALOG_ACTION_CANCEL_DATA_TEST_ID}
                     variant={ECalendarButtonVariant.CONTAINED}

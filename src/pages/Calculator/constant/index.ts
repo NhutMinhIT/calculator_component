@@ -12,6 +12,8 @@ export const CALCULATOR_DIALOG_DATA_TEST_ID: string = "calculatorDialog";
 export const CALCULATOR_DIALOG_TITLE_ID: string = "alert-dialog-title";
 export const CALCULATOR_DIALOG_TITLE_DATA_TEST_ID: string = "alert-dialog-title";
 export const CALCULATOR_DIALOG_TITLE: string = "Head Constant Pressure"
+export const CALCULATOR_DIALOG_CONTENT_DATA_TEST_ID: string = "alert-dialog-description";
+export const CALCULATOR_DIALOG_ACTION_DATA_TEST_ID: string = "alert-dialog-action";
 
 //Calculator Frame
 export const CALCULATOR_FRAME_DATA_TEST_ID: string = "calculatorFrame";
