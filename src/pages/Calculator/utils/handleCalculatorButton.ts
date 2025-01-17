@@ -33,6 +33,20 @@ export const handleCalculatorButton = (value: string, currentInput: string): str
         }
         return CALCULATOR_MINUS + currentInput;  // Add minus
     }
+
+    // Decimal button: append decimal point
+    if (value === ECalculatorOperator.DECIMAL) {
+        // Prevent multiple decimal points
+        if (currentInput.includes('.')) {
+            return currentInput || '0';  // Return 0 if input is empty
+        }
+        // Append decimal point to empty input
+        if (!currentInput) {
+            return '0' + '.';
+        }
+        return currentInput + '.';
+    }
+
     // Default: append value to input
     return currentInput + value;
 };

@@ -14,7 +14,7 @@ import {
     CALCULTATOR_VALUE_INPUT_RANGE_MIN
 } from '../../constant';
 import { TCaculatorFrame } from '../../types/calculatorType';
-import { handleCalculatorButton } from '../../util/handleCalculatorButton';
+import { handleCalculatorButton } from '../../utils/handleCalculatorButton';
 
 
 const CalculatorFrame: FC<TCaculatorFrame> = ({
