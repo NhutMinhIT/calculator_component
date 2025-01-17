@@ -36,6 +36,9 @@ const CalculatorFrame: FC<TCaculatorFrame> = ({
                 type="text"
                 value={inputValue}
                 readOnly
+                inputProps={{
+                    style: { textAlign: 'right' }
+                }}
             />
             <Box
                 data-testid={CALCULATOR_RANGE_VALUE_DATA_TEST_ID}

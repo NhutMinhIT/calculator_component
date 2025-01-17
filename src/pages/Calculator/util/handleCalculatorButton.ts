@@ -1,31 +1,37 @@
+import {
+    CALCULATOR_CURRENT_INPUT_LENGTH,
+    CALCULATOR_EMPTRY_VALUE, CALCULATOR_MINUS
+} from "../constant";
+import { ECalculatorOperator } from "../types/calculatorType";
+
 export const handleCalculatorButton = (value: string, currentInput: string): string => {
     // Clear button: reset input
-    if (value === 'clear') {
-        return '';
+    if (value === ECalculatorOperator.CLEAR) {
+        return CALCULATOR_EMPTRY_VALUE;
     }
 
     // Delete button: remove last character
-    if (value === 'delete') {
+    if (value === ECalculatorOperator.DELETE) {
         // Handle negative sign case
-        if (currentInput === '-') {
-            return '';
+        if (currentInput === CALCULATOR_MINUS) {
+            return CALCULATOR_EMPTRY_VALUE;
         }
         // Handle last digit of negative number
-        if (currentInput.startsWith('-') && currentInput.length === 2) {
-            return '';
+        if (currentInput.startsWith(CALCULATOR_MINUS) && currentInput.length === CALCULATOR_CURRENT_INPUT_LENGTH) {
+            return CALCULATOR_EMPTRY_VALUE;
         }
         return currentInput.slice(0, -1);
     }
 
     // Toggle sign button
-    if (value === '+/-') {
-        if (!currentInput || currentInput === '-') {
-            return ''; // Return empty if only minus sign
+    if (value === ECalculatorOperator.PlusOrMinus) {
+        if (!currentInput || currentInput === CALCULATOR_MINUS) {
+            return CALCULATOR_EMPTRY_VALUE; // Return empty if only minus sign
         }
-        if (currentInput.startsWith('-')) {
+        if (currentInput.startsWith(CALCULATOR_MINUS)) {
             return currentInput.slice(1);  // Remove minus
         }
-        return '-' + currentInput;  // Add minus
+        return CALCULATOR_MINUS + currentInput;  // Add minus
     }
 
     // Default: append value to input

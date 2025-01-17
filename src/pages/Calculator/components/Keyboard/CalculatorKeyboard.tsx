@@ -15,33 +15,36 @@ import OPlusOrMinusButton from './OperatorButton/OPlusOrMinusButton';
 import NZeroButton from './NumberButton/NZeroButton';
 import ODecimalButton from './OperatorButton/ODecimalButton';
 import ADeleteButton from './ActionButton/ADeleteButton';
+import { ECalculatorOperator } from '../../types/calculatorType';
+import { CALCULATOR_KEYBOARD_BUTTON_CLEAR_DATA_TEST_ID, CALCULATOR_KEYBOARD_BUTTON_DELETE_DATA_TEST_ID, CALCULATOR_KEYBOARD_BUTTON_LIST_DATA_TEST_ID } from '../../constant';
 
 
-interface Props {
+type TCalculatorKeyboardProps = {
     onButtonClick: (value: string) => void;
 }
 
-const CalculatorKeyboard: FC<Props> = ({ onButtonClick }) => {
+const CalculatorKeyboard: FC<TCalculatorKeyboardProps> = ({ onButtonClick }) => {
     return (
         <Box
-            data-testid="calculator-keyboard"
+            data-testid={CALCULATOR_KEYBOARD_BUTTON_LIST_DATA_TEST_ID}
             className={styles.calculatorKeyboard}
         >
             <Box className={styles.gridContainerAction}>
                 <div
-                    data-testid="clear-button"
+                    data-testid={CALCULATOR_KEYBOARD_BUTTON_CLEAR_DATA_TEST_ID}
                     className={styles.clearButton}
-                    onClick={() => onButtonClick('clear')}
                 >
                     <AClearButton
+                        onClick={() => onButtonClick(ECalculatorOperator.CLEAR)}
                     />
                 </div>
                 <div
-                    data-testid="delete-button"
+                    data-testid={CALCULATOR_KEYBOARD_BUTTON_DELETE_DATA_TEST_ID}
                     className={styles.deleteButton}
-                    onClick={() => onButtonClick('delete')}
                 >
-                    <ADeleteButton />
+                    <ADeleteButton
+                        onClick={() => onButtonClick(ECalculatorOperator.DELETE)}
+                    />
                 </div>
             </Box>
             <Box className={styles.gridContainerNumber}>

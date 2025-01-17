@@ -54,3 +54,7 @@ export type TCaculatorFrame = {
     inputValue: string;
     handleInputChange: (value: string) => void;
 };
+
+export type TCalculatorButton = {
+    onClick: () => void;
+}

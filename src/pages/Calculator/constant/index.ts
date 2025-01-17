@@ -54,3 +54,8 @@ export const CALCULATOR_KEYBOARD_BUTTON_DECIMAL_DATA_TEST_ID: string = "calculat
 export const CALCULATOR_KEYBOARD_BUTTON_PLUS_OR_MINUS_DATA_TEST_ID: string = "calculatorKeyboardButtonPlusOrMinus";
 export const CALCULATOR_KEYBOARD_BUTTON_CLEAR_DATA_TEST_ID: string = "calculatorKeyboardButtonClear";
 export const CALCULATOR_KEYBOARD_BUTTON_DELETE_DATA_TEST_ID: string = "calculatorKeyboardButtonDelete";
+
+//CalculatorButton Value
+export const CALCULATOR_EMPTRY_VALUE: string = '';
+export const CALCULATOR_CURRENT_INPUT_LENGTH: number = 2;
+export const CALCULATOR_MINUS: string = '-';
