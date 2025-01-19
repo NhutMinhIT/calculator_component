@@ -3,7 +3,7 @@ import { TUseCalculator } from "../types/calculatorType";
 
 export const useCalculator = (): TUseCalculator => {
     const [isOpenCalculatorDialog, setIsOpenCalculatorDialog] = useState<boolean>(false);
-    const [inputValue, setInputValue] = useState<string>("0"); // Set initial value to "0"
+    const [inputValue, setInputValue] = useState<string>("0");
     const [finalValue, setFinalValue] = useState<number>(0);
 
     const handleOpenCalculatorDialog = (): void => setIsOpenCalculatorDialog(true);
