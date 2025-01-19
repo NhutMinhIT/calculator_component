@@ -3,19 +3,28 @@ import { TUseCalculator } from "../types/calculatorType";
 
 export const useCalculator = (): TUseCalculator => {
     const [isOpenCalculatorDialog, setIsOpenCalculatorDialog] = useState<boolean>(false);
-    const [inputValue, setInputValue] = useState<number>(0);
+    const [inputValue, setInputValue] = useState<string>("0"); // Set initial value to "0"
     const [finalValue, setFinalValue] = useState<number>(0);
 
     const handleOpenCalculatorDialog = (): void => setIsOpenCalculatorDialog(true);
     const handleCloseCalculatorDialog = (): void => {
         setIsOpenCalculatorDialog(false);
-        setInputValue(0);
+        setInputValue("0");
     };
 
-    const handleInputChange = (value: number): void => setInputValue(value);
+    const handleInputChange = (value: string): void => {
+        if (inputValue === "0") {
+            setInputValue(value);
+        } else {
+            if (value.length <= 8) {
+                setInputValue(value);
+            }
+        }
+    };
+
 
     const handleConfirm = (): void => {
-        setFinalValue(inputValue);
+        setFinalValue(parseFloat(inputValue));
         handleCloseCalculatorDialog();
     };
 

@@ -59,7 +59,7 @@ const Calculator = (): JSX.Element => {
                 handleClose={handleCloseCalculatorDialog}
                 handleConfirm={handleConfirm}
                 inputValue={inputValue.toString()}
-                handleInputChange={(value: string) => handleInputChange(Number(value))}
+                handleInputChange={handleInputChange}
             />
         </Box>
     );

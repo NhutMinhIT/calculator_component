@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react';
 import styles from '../../style/calculator.module.css';
-import { Box, OutlinedInput } from '@mui/material';
+import { Box } from '@mui/material';
 import { CalculatorKeyboard } from '../index';
 import {
     CALCULATOR_FRAME_DATA_TEST_ID,
@@ -44,14 +44,21 @@ const CalculatorFrame: FC<TCaculatorFrame> = ({
                 className={styles.calculatorRange}
             >
                 <span
-                    className={Number(inputValue) < CALCULTATOR_VALUE_INPUT_RANGE_MIN ? styles.minValueErr : styles.minValue}
+                    className={
+                        Number(inputValue) < CALCULTATOR_VALUE_INPUT_RANGE_MIN
+                            ? styles.minValueErr
+                            : styles.minValue
+                    }
                     data-testid={CALCULTATOR_TEXT_INPUT_RANGE_MIN_DATA_TEST_ID}
                 >
                     {CALCULTATOR_TEXT_INPUT_RANGE_MIN}
                 </span>
                 <span
                     className={
-                        Number(inputValue) > CALCULTATOR_VALUE_INPUT_RANGE_MAX ? styles.maxValueErr : styles.maxValue}
+                        Number(inputValue) > CALCULTATOR_VALUE_INPUT_RANGE_MAX
+                            ? styles.maxValueErr // Thêm màu đỏ khi vượt quá 1000
+                            : styles.maxValue
+                    }
                     data-testid={CALCULTATOR_TEXT_INPUT_RANGE_MAX_DATA_TEST_ID}
                 >
                     {CALCULTATOR_TEXT_INPUT_RANGE_MAX}

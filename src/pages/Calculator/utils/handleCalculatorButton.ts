@@ -35,14 +35,13 @@ export const handleCalculatorButton = (value: string, currentInput: string): str
         return CALCULATOR_MINUS + currentInput;  // Add minus
     }
 
-    // Decimal button: append decimal point
     if (value === ECalculatorOperator.DECIMAL) {
-        // Check if input already contains decimal point
+        // Prevent multiple decimals
         if (currentInput.includes(CALCULATOR_DECIMAL)) {
             return currentInput;
         }
-        // Append decimal point
-        return currentInput + CALCULATOR_DECIMAL;
+        // Append decimal
+        return currentInput === CALCULATOR_EMPTRY_VALUE ? "0." : currentInput + CALCULATOR_DECIMAL;
     }
 
     // Default: append value to input
