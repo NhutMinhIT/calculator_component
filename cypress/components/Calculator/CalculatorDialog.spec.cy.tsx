@@ -64,16 +64,16 @@ describe("CalculatorDialog Component", () => {
     })
 
     //check callback function
-    it("calls the handleClose prop when the Cancel button is clicked", () => {
+    it("should calls the handleClose prop when the Cancel button is clicked", () => {
         cy.get(`[${dialogActionCancelButtonDataTestId}]`).click();
         cy.get("@handleClose").should("have.been.calledOnce");
     });
-    it("calls the handleInputChange prop when the input value is changed", () => {
+    it("should calls the handleInputChange prop when the input value is changed", () => {
         const value = 2;
         cy.get(`[${dialogDataTestId}]`).find('button').contains(value).click();
         cy.get("@handleInputChange").should("have.been.calledOnce");
     });
-    it("calls the handleConfirm prop when the Ok button is clicked", () => {
+    it("should calls the handleConfirm prop when the Ok button is clicked", () => {
         const value = 8;
         cy.get(`[${dialogDataTestId}]`).find('button').contains(value).click();
         cy.get(`[${dialogActionConfirmButtonDataTestId}]`).click();
