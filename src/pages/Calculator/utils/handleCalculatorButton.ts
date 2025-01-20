@@ -35,6 +35,7 @@ export const handleCalculatorButton = (value: string, currentInput: string): str
         return CALCULATOR_MINUS + currentInput;  // Add minus
     }
 
+    // Decimal button
     if (value === ECalculatorOperator.DECIMAL) {
         // Prevent multiple decimals
         if (currentInput.includes(CALCULATOR_DECIMAL)) {

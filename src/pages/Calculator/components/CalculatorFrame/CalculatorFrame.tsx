@@ -16,6 +16,7 @@ import {
 } from '../../constant';
 import { TCaculatorFrame } from '../../types/calculatorType';
 import { handleCalculatorButton } from '../../utils/handleCalculatorButton';
+import { formatNumberWithThousands } from '../../utils/formatCurrency';
 
 
 const CalculatorFrame: FC<TCaculatorFrame> = ({
@@ -37,7 +38,7 @@ const CalculatorFrame: FC<TCaculatorFrame> = ({
                 data-testid={CALCULATOR_TEXT_FIELD_INPUT_DATA_TEST_ID}
                 className={styles.calculatorInputValue}
             >
-                {inputValue}
+                {formatNumberWithThousands(inputValue)}
             </div>
             <Box
                 data-testid={CALCULATOR_RANGE_VALUE_DATA_TEST_ID}
@@ -56,7 +57,7 @@ const CalculatorFrame: FC<TCaculatorFrame> = ({
                 <span
                     className={
                         Number(inputValue) > CALCULTATOR_VALUE_INPUT_RANGE_MAX
-                            ? styles.maxValueErr // Thêm màu đỏ khi vượt quá 1000
+                            ? styles.maxValueErr
                             : styles.maxValue
                     }
                     data-testid={CALCULTATOR_TEXT_INPUT_RANGE_MAX_DATA_TEST_ID}
