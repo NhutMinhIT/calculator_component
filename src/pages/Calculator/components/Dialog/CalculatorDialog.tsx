@@ -50,6 +50,7 @@ const CalculatorDialog: FC<TCalculatorDialog> = ({
             >
                 {CALCULATOR_DIALOG_TITLE}
             </DialogTitle>
+
             <DialogContent
                 data-testid={CALCULATOR_DIALOG_CONTENT_DATA_TEST_ID}
             >
@@ -58,6 +59,7 @@ const CalculatorDialog: FC<TCalculatorDialog> = ({
                     handleInputChange={handleInputChange}
                 />
             </DialogContent>
+
             <DialogActions
                 data-testid={CALCULATOR_DIALOG_ACTION_DATA_TEST_ID}
             >

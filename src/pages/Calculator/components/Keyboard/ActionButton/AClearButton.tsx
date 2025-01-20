@@ -8,6 +8,7 @@ const AClearButton: FC<TCalculatorButton> = ({
 }) => {
     return (
         <KeyboardIconButton
+            //set the button value to Clear (AC)
             onClick={onClick}
         >
             <DeleteForeverOutlined fontSize='medium' />

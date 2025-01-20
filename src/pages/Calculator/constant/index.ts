@@ -1,3 +1,4 @@
+// index Page (Calculator)
 export const CALCULATOR_PAGE_DATA_TEST_ID: string = "calculatorPage";
 export const CALCULATOR_TEXT_FIELD_LABEL: string = "Calculator";
 export const CALCULATOR_TEXT_FIELD_ID: string = "calculatorInput";
@@ -43,7 +44,7 @@ export const CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_ZERO: string = "0";
 export const CALCULATOR_KEYBOARD_BUTTON_TEXT_DECIMAL: string = ".";
 export const CALCULATOR_KEYBOARD_BUTTON_TEXT_PLUS_OR_MINUS: string = "+/-";
 
-//kEYBOARD DATA TEST ID
+//CALCULATOR kEYBOARD DATA TEST ID
 export const CALCULATOR_KEYBOARD_BUTTON_LIST_DATA_TEST_ID: string = "calculatorKeyboard";
 export const CALCULATOR_KEYBOARD_BUTTON_NUMBER_ONE_DATA_TEST_ID: string = "calculatorKeyboardButtonOne";
 export const CALCULATOR_KEYBOARD_BUTTON_NUMBER_TWO_DATA_TEST_ID: string = "calculatorKeyboardButtonTwo";

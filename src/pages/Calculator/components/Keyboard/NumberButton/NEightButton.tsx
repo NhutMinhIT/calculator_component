@@ -10,6 +10,7 @@ const NEightButton: FC<TCalculatorButton> = ({
 }) => {
     return (
         <KeyboardButton
+            // set the onClick event to the number eight button (value = 8)
             onClick={onClick}
         >
             {CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_EIGHT}

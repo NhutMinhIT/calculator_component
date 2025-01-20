@@ -34,6 +34,7 @@ const Calculator = (): JSX.Element => {
         <Box
             data-testid={CALCULATOR_PAGE_DATA_TEST_ID}
         >
+            {/* render component InputField with Calculator*/}
             <FormControl variant="outlined">
                 <InputLabel
                     htmlFor={CALCULATOR_TEXT_FIELD_ID}
@@ -56,6 +57,7 @@ const Calculator = (): JSX.Element => {
                 />
             </FormControl>
 
+            {/* render component CalculatorDialog */}
             <CalculatorDialog
                 data-testid={CALCULATOR_DIALOG_DATA_TEST_ID}
                 isOpen={isOpenCalculatorDialog}

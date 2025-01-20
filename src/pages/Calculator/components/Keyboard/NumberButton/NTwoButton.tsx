@@ -12,6 +12,7 @@ const NTwoButton: FC<TCalculatorButton> = ({
 }) => {
     return (
         <KeyboardButton
+            //set the button value to 2
             onClick={onClick}
         >
             {CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_TWO}

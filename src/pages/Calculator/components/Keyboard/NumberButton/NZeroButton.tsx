@@ -10,6 +10,7 @@ const NZeroButton: FC<TCalculatorButton> = ({
 }) => {
     return (
         <KeyboardButton
+            // set the button value to 0
             onClick={onClick}
         >
             {CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_ZERO}

@@ -10,6 +10,7 @@ const NFourButton: FC<TCalculatorButton> = ({
 }) => {
     return (
         <KeyboardButton
+            // set the onClick event to the number four button (value = 4)  
             onClick={onClick}
         >
             {CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_FOUR}

@@ -10,6 +10,7 @@ const NSevenButton: FC<TCalculatorButton> = ({
 }) => {
     return (
         <KeyboardButton
+            // set the button value to 7
             onClick={onClick}
         >
             {CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_SEVEN}

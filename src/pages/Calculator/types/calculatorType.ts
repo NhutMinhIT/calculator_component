@@ -1,8 +1,11 @@
+// Button variant options
 export enum ECalCulatorButtonVariant {
     CONTAINED = 'contained',
     OUTLINED = 'outlined',
     TEXT = 'text',
 }
+
+// Button color options
 export enum ECalCulatorButtonColor {
     ERROR = 'error',
     PRIMARY = 'primary',
@@ -13,6 +16,7 @@ export enum ECalCulatorButtonColor {
     INFO = 'info',
 }
 
+// Button value input
 export enum ECalculatorValue {
     ONE = "1",
     TWO = "2",
@@ -25,6 +29,8 @@ export enum ECalculatorValue {
     NINE = "9",
     ZERO = "0",
 }
+
+// Button operator input
 export enum ECalculatorOperator {
     PLUSORMINUS = '+/-',
     DECIMAL = '.',
@@ -32,7 +38,7 @@ export enum ECalculatorOperator {
     DELETE = 'delete',
 }
 
-
+// Indefinite value of hook useCalculator
 export type TUseCalculator = {
     isOpenCalculatorDialog: boolean;
     inputValue: string;
@@ -43,6 +49,7 @@ export type TUseCalculator = {
     handleConfirm: () => void;
 }
 
+// Indefinite data type of CalculatorDialog component props
 export type TCalculatorDialog = {
     isOpen: boolean;
     handleClose: () => void;
@@ -50,15 +57,19 @@ export type TCalculatorDialog = {
     inputValue: string;
     handleInputChange: (value: string) => void;
 }
+
+// Indefinite data type of CalculatorFrame component props
 export type TCaculatorFrame = {
     inputValue: string;
     handleInputChange: (value: string) => void;
 };
 
+// Indefinite data type of CalculatorKeyboard component props (sigle value)
 export type TCalculatorButton = {
     onClick: () => void;
 }
 
+// Indefinite data type of CalculatorKeyboard component props (list keyboard)
 export type TCalculatorKeyboardProps = {
     onButtonClick: (value: string) => void;
 }

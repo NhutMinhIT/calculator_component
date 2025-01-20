@@ -13,10 +13,11 @@ const KeyboardButton = styled(Button)
         font-size: 1.5rem;
         padding: 18px auto 18px auto;
     } 
+        
     &.MuiButton-root:hover{
         background-color:rgba(255, 255, 255, 0.7);
     }       
-   `
+`
 const KeyboardButtonCustomize: FC<ButtonProps> = (props) => {
     return (
         <KeyboardButton

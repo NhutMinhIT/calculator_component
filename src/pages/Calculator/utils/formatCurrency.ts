@@ -14,6 +14,8 @@ export const formatCurrency = (value: string | number): string => {
     return parts.join(CALCULATOR_DECIMAL);
 };
 
+// format number with thousands separator (1000 to 1,000)
 export const formatNumberWithThousands = (value: string | number): string => {
+    //return formatted currency
     return formatCurrency(value);
 };

@@ -12,11 +12,12 @@ const KeyboardIconButton = styled(IconButton)
         padding: 15px;
         box-shadow: 0 0 0.5rem 0.1rem rgba(201, 198, 198, 0.5);
     }
+
     &.MuiIconButton-root:hover{
         background-color:rgba(255, 255, 255, 0.7);
     }
         
-    `
+`
 const KeyboardIconButtonCustomize: FC<IconButtonProps> = (props) => {
     return (
         <KeyboardIconButton
