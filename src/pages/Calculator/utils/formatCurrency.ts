@@ -1,6 +1,8 @@
+import { CALCULATOR_INPUT_VALUE_DEFAULT } from "../constant";
+
 export const formatCurrency = (value: string | number): string => {
     // Handle empty or invalid input
-    if (!value) return "0";
+    if (!value) return CALCULATOR_INPUT_VALUE_DEFAULT;
 
     const parts = value.toString().split('.');
     // Format whole number part with commas

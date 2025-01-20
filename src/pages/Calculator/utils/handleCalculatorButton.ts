@@ -3,7 +3,7 @@ import {
     CALCULATOR_DECIMAL,
     CALCULATOR_EMPTRY_VALUE, CALCULATOR_MINUS
 } from "../constant";
-import { ECalculatorOperator } from "../types/calculatorType";
+import { ECalculatorOperator, ECalculatorValue } from "../types/calculatorType";
 
 export const handleCalculatorButton = (value: string, currentInput: string): string => {
     // Clear button: reset input
@@ -46,5 +46,9 @@ export const handleCalculatorButton = (value: string, currentInput: string): str
     }
 
     // Default: append value to input
+    if (currentInput === ECalculatorValue.ZERO) {
+        return value;
+    }
+
     return currentInput + value;
 };
