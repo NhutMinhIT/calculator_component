@@ -10,6 +10,7 @@ const NThreeButton: FC<TCalculatorButton> = ({
 }) => {
     return (
         <KeyboardButton
+            //set the button value to 3
             onClick={onClick}
         >
             {CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_THREE}

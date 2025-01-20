@@ -11,6 +11,7 @@ const OPlusOrMinusButton: FC<TCalculatorButton> = ({
 }) => {
     return (
         <KeyboardButton
+            // set the button value to Plus or Minus (+/-)
             onClick={onClick}
         >
             {CALCULATOR_KEYBOARD_BUTTON_TEXT_PLUS_OR_MINUS}

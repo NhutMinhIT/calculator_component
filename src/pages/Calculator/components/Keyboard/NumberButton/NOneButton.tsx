@@ -11,6 +11,7 @@ const NOneButton: FC<TCalculatorButton> = ({
 }) => {
     return (
         <KeyboardButton
+            // set the onClick event to the number one button (value = 1)
             onClick={onClick}
         >
             {CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_ONE}

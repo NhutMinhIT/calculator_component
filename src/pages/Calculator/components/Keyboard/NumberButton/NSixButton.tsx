@@ -10,6 +10,7 @@ const NSixButton: FC<TCalculatorButton> = ({
 }) => {
     return (
         <KeyboardButton
+            // set the button value to 6
             onClick={onClick}
         >
             {CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_SIX}

@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react';
 import styles from '../../style/calculator.module.css';
-import { Box, OutlinedInput } from '@mui/material';
+import { Box } from '@mui/material';
 import { CalculatorKeyboard } from '../index';
 import {
     CALCULATOR_FRAME_DATA_TEST_ID,
@@ -16,13 +16,18 @@ import {
 } from '../../constant';
 import { TCaculatorFrame } from '../../types/calculatorType';
 import { handleCalculatorButton } from '../../utils/handleCalculatorButton';
+import { formatNumberWithThousands } from '../../utils/formatCurrency';
 
 
 const CalculatorFrame: FC<TCaculatorFrame> = ({
     inputValue,
     handleInputChange
 }) => {
-
+    // handle button click event, it will call the handleCalculatorButton function to calculate the value
+    // - the handleCalculatorButton function will receive the current value and the button value
+    // - current value will be updated based on the button value (is value is number, operator, or decimal)
+    // - the handleCalculatorButton function will return the new value
+    // and then call the handleInputChange function to update the
     const handleButtonClick = (value: string): void => {
         const newValue = handleCalculatorButton(value, inputValue);
         handleInputChange(newValue);
@@ -37,26 +42,36 @@ const CalculatorFrame: FC<TCaculatorFrame> = ({
                 data-testid={CALCULATOR_TEXT_FIELD_INPUT_DATA_TEST_ID}
                 className={styles.calculatorInputValue}
             >
-                {inputValue}
+                {formatNumberWithThousands(inputValue)}
             </div>
+
+            {/* render validate range value for the input value */}
             <Box
                 data-testid={CALCULATOR_RANGE_VALUE_DATA_TEST_ID}
                 className={styles.calculatorRange}
             >
                 <span
-                    className={Number(inputValue) < CALCULTATOR_VALUE_INPUT_RANGE_MIN ? styles.minValueErr : styles.minValue}
+                    className={
+                        Number(inputValue) < CALCULTATOR_VALUE_INPUT_RANGE_MIN
+                            ? styles.minValueErr
+                            : styles.minValue
+                    }
                     data-testid={CALCULTATOR_TEXT_INPUT_RANGE_MIN_DATA_TEST_ID}
                 >
                     {CALCULTATOR_TEXT_INPUT_RANGE_MIN}
                 </span>
                 <span
                     className={
-                        Number(inputValue) > CALCULTATOR_VALUE_INPUT_RANGE_MAX ? styles.maxValueErr : styles.maxValue}
+                        Number(inputValue) > CALCULTATOR_VALUE_INPUT_RANGE_MAX
+                            ? styles.maxValueErr
+                            : styles.maxValue
+                    }
                     data-testid={CALCULTATOR_TEXT_INPUT_RANGE_MAX_DATA_TEST_ID}
                 >
                     {CALCULTATOR_TEXT_INPUT_RANGE_MAX}
                 </span>
             </Box>
+
             <Box
                 data-testid={CALCULATOR_KEYBOARD_BUTTON_LIST_DATA_TEST_ID}
             >

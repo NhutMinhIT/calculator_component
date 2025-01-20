@@ -8,6 +8,7 @@ const ADeleteButton: FC<TCalculatorButton> = ({
 }) => {
     return (
         <KeyboardIconButton
+            //set delete a input value
             onClick={onClick}
         >
             <BackspaceOutlinedIcon fontSize='medium' />

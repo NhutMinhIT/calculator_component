@@ -10,6 +10,7 @@ const ODecimalButton: FC<TCalculatorButton> = ({
 }) => {
     return (
         <KeyboardButton
+            //set the button value to Decimal (.)
             onClick={onClick}
         >
             {CALCULATOR_KEYBOARD_BUTTON_TEXT_DECIMAL}

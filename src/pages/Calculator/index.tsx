@@ -17,6 +17,7 @@ import {
     CALCULATOR_TEXT_FIELD_ID,
     CALCULATOR_TEXT_FIELD_LABEL
 } from './constant';
+import { formatNumberWithThousands } from './utils/formatCurrency';
 
 const Calculator = (): JSX.Element => {
     const {
@@ -33,17 +34,19 @@ const Calculator = (): JSX.Element => {
         <Box
             data-testid={CALCULATOR_PAGE_DATA_TEST_ID}
         >
-            <FormControl>
+            {/* render component InputField with Calculator*/}
+            <FormControl variant="outlined">
                 <InputLabel
                     htmlFor={CALCULATOR_TEXT_FIELD_ID}
                 >
                     {CALCULATOR_TEXT_FIELD_LABEL}
                 </InputLabel>
                 <OutlinedInput
-                    data-testid={CALCULATOR_TEXT_FIELD_DATA_TEST_ID}
                     id={CALCULATOR_TEXT_FIELD_ID}
-                    value={finalValue}
+                    data-testid={CALCULATOR_TEXT_FIELD_DATA_TEST_ID}
+                    value={formatNumberWithThousands(finalValue)}
                     onClick={handleOpenCalculatorDialog}
+                    label={CALCULATOR_TEXT_FIELD_LABEL}
                     endAdornment={
                         <InputAdornment position="end">
                             <IconButton>
@@ -53,13 +56,15 @@ const Calculator = (): JSX.Element => {
                     }
                 />
             </FormControl>
+
+            {/* render component CalculatorDialog */}
             <CalculatorDialog
                 data-testid={CALCULATOR_DIALOG_DATA_TEST_ID}
                 isOpen={isOpenCalculatorDialog}
                 handleClose={handleCloseCalculatorDialog}
                 handleConfirm={handleConfirm}
                 inputValue={inputValue.toString()}
-                handleInputChange={(value: string) => handleInputChange(Number(value))}
+                handleInputChange={handleInputChange}
             />
         </Box>
     );
