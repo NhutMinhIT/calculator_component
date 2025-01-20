@@ -68,3 +68,4 @@ export const CALCULATOR_DECIMAL: string = '.';
 export const CALCULATOR_INPUT_VALUE_DEFAULT: string = '0';
 export const CALCULATOR_FINAL_VALUE_DEFAULT: number = 0;
 export const CALCULATOR_INPUT_VALUE_MAX_LENGTH: number = 12;
+export const CALCULATOR_INPUT_VALUE_START_DECIMAL: string = '0.';

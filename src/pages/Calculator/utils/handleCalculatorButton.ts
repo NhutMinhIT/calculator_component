@@ -1,7 +1,7 @@
 import {
     CALCULATOR_CURRENT_INPUT_LENGTH,
     CALCULATOR_DECIMAL,
-    CALCULATOR_EMPTRY_VALUE, CALCULATOR_MINUS
+    CALCULATOR_EMPTRY_VALUE, CALCULATOR_INPUT_VALUE_START_DECIMAL, CALCULATOR_MINUS
 } from "../constant";
 import { ECalculatorOperator, ECalculatorValue } from "../types/calculatorType";
 
@@ -42,7 +42,7 @@ export const handleCalculatorButton = (value: string, currentInput: string): str
             return currentInput;
         }
         // Append decimal
-        return currentInput === CALCULATOR_EMPTRY_VALUE ? "0." : currentInput + CALCULATOR_DECIMAL;
+        return currentInput === CALCULATOR_EMPTRY_VALUE ? CALCULATOR_INPUT_VALUE_START_DECIMAL : currentInput + CALCULATOR_DECIMAL;
     }
 
     // Default: append value to input
