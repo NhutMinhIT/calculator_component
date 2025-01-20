@@ -55,7 +55,6 @@ describe('Calculator component', () => {
         cy.get(`[${inputDataTestId}]`).click();
         cy.get(`[${dialogDataTestId}]`).should('exist');
         cy.get(`[${dialogDataTestId}]`).find('button').contains(value).click();
-        cy.get(`[${dialogOkDataTestId}]`).click();
         cy.wait(1000);
     });
     it('should handle action ok successfully (value 2)', () => {
@@ -130,6 +129,14 @@ describe('Calculator component', () => {
         cy.get(`[${dialogDataTestId}]`).should('exist');
         cy.get(`[${dialogDataTestId}]`).find('button').contains(number).click();
         cy.get(`[${dialogDataTestId}]`).find('button').contains(value).click();
+        cy.wait(1000);
+    });
+    it('should handle action ok successfully (value 1)', () => {
+        const value = 1;
+        cy.get(`[${inputDataTestId}]`).click();
+        cy.get(`[${dialogDataTestId}]`).should('exist');
+        cy.get(`[${dialogDataTestId}]`).find('button').contains(value).click();
+        cy.get(`[${dialogOkDataTestId}]`).click();
         cy.wait(1000);
     });
 
