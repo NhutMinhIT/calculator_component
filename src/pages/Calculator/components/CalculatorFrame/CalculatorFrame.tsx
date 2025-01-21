@@ -23,11 +23,6 @@ const CalculatorFrame: FC<TCaculatorFrame> = ({
     inputValue,
     handleInputChange
 }) => {
-    // handle button click event, it will call the handleCalculatorButton function to calculate the value
-    // - the handleCalculatorButton function will receive the current value and the button value
-    // - current value will be updated based on the button value (is value is number, operator, or decimal)
-    // - the handleCalculatorButton function will return the new value
-    // and then call the handleInputChange function to update the
     const handleButtonClick = (value: string): void => {
         const newValue = handleCalculatorButton(value, inputValue);
         handleInputChange(newValue);
@@ -44,8 +39,6 @@ const CalculatorFrame: FC<TCaculatorFrame> = ({
             >
                 {formatNumberWithThousands(inputValue)}
             </div>
-
-            {/* render validate range value for the input value */}
             <Box
                 data-testid={CALCULATOR_RANGE_VALUE_DATA_TEST_ID}
                 className={styles.calculatorRange}
@@ -71,7 +64,6 @@ const CalculatorFrame: FC<TCaculatorFrame> = ({
                     {CALCULTATOR_TEXT_INPUT_RANGE_MAX}
                 </span>
             </Box>
-
             <Box
                 data-testid={CALCULATOR_KEYBOARD_BUTTON_LIST_DATA_TEST_ID}
             >
