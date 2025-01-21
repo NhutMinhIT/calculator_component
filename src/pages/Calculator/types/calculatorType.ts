@@ -28,14 +28,24 @@ export enum ECalculatorValue {
     EIGHT = "8",
     NINE = "9",
     ZERO = "0",
+    PLUSORMINUS = '+/-',
+    DECIMAL = '.',
 }
 
 // Button operator input
 export enum ECalculatorOperator {
-    PLUSORMINUS = '+/-',
-    DECIMAL = '.',
     CLEAR = 'clear',
     DELETE = 'delete',
+}
+export interface IKeyboard {
+    dataTestId: string;
+    buttonText: string;
+    value: ECalculatorValue;
+}
+export interface IAction {
+    dataTestId: string;
+    element?: JSX.Element;
+    action: ECalculatorOperator;
 }
 
 // Indefinite value of hook useCalculator
@@ -67,6 +77,8 @@ export type TCaculatorFrame = {
 // Indefinite data type of CalculatorKeyboard component props (sigle value)
 export type TCalculatorButton = {
     onClick: () => void;
+    keyboardButtonText?: string
+    element?: JSX.Element;
 }
 
 // Indefinite data type of CalculatorKeyboard component props (list keyboard)

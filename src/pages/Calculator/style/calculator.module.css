@@ -75,11 +75,11 @@
     grid-gap: 0.5rem;
 }
 
-.gridContainerAction .clearButton {
+.gridContainerAction>div:nth-child(1) {
     grid-column: span 8;
 }
 
-.gridContainerAction .deleteButton {
+.gridContainerAction>div:nth-child(2) {
     grid-column: span 4;
 }
 

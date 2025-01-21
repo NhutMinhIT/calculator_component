@@ -27,7 +27,7 @@ export const handleCalculatorButton = (value: string, currentInput: string): str
     }
 
     // Toggle sign button
-    if (value === ECalculatorOperator.PLUSORMINUS) {
+    if (value === ECalculatorValue.PLUSORMINUS) {
         if (!currentInput || currentInput === CALCULATOR_MINUS) {
             return CALCULATOR_EMPTRY_VALUE; // Return empty if only minus sign
         }
@@ -38,7 +38,7 @@ export const handleCalculatorButton = (value: string, currentInput: string): str
     }
 
     // Decimal button
-    if (value === ECalculatorOperator.DECIMAL) {
+    if (value === ECalculatorValue.DECIMAL) {
         // Prevent multiple decimals
         if (currentInput.includes(CALCULATOR_DECIMAL)) {
             return currentInput;

@@ -1,21 +1,18 @@
 import React, { FC, memo } from 'react'
 import { KeyboardButton } from '../../index'
-import {
-    CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_SIX,
-} from '../../../constant'
 import { TCalculatorButton } from '../../../types/calculatorType'
 
-const NSixButton: FC<TCalculatorButton> = ({
-    onClick
+const KeyboardValue: FC<TCalculatorButton> = ({
+    onClick,
+    keyboardButtonText
 }) => {
     return (
         <KeyboardButton
-            // set the button value to 6
             onClick={onClick}
         >
-            {CALCULATOR_KEYBOARD_BUTTON_TEXT_NUMBER_SIX}
+            {keyboardButtonText}
         </KeyboardButton>
     )
 }
 
-export default memo(NSixButton);
+export default memo(KeyboardValue)
