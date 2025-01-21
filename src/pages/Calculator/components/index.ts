@@ -5,4 +5,5 @@ export { default as KeyboardButton } from './KeyboardButtonCustomize/KeyboardBut
 export { default as KeyboardIconButton } from './KeyboardButtonCustomize/KeyboardIconButton'
 
 // Value keyboard Button
-export { default as KeyboardValue } from './Keyboard/NumberButton/KeyboardValue';
+export { default as KeyboardValue } from './Keyboard/KeyboardValue';
+export { default as KeyboardAction } from './Keyboard/KeyboardAction';

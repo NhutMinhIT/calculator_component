@@ -13,7 +13,7 @@ import {
     CALCULATOR_KEYBOARD_BUTTON_LIST_DATA_TEST_ID,
 } from '../../constant';
 import { listAction, listKeyboard } from '../../constant/listKeyboard';
-import KeyboardAction from './ActionButton/KeyboardAction';
+import KeyboardAction from './KeyboardAction';
 
 
 const CalculatorKeyboard: FC<TCalculatorKeyboardProps> = ({ onButtonClick }) => {

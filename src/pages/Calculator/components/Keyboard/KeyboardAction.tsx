@@ -1,6 +1,6 @@
-import React, { FC } from 'react'
-import { TCalculatorButton } from '../../../types/calculatorType'
-import KeyboardIconButton from '../../KeyboardButtonCustomize/KeyboardIconButton'
+import React, { FC, memo } from 'react'
+import KeyboardIconButton from '../KeyboardButtonCustomize/KeyboardIconButton'
+import { TCalculatorButton } from '../../types/calculatorType'
 
 const KeyboardAction: FC<TCalculatorButton> = ({
     onClick,
@@ -15,4 +15,4 @@ const KeyboardAction: FC<TCalculatorButton> = ({
     )
 }
 
-export default KeyboardAction
+export default memo(KeyboardAction)
