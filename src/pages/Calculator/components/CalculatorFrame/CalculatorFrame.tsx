@@ -18,7 +18,6 @@ import { TCaculatorFrame } from '../../types/calculatorType';
 import { handleCalculatorButton } from '../../utils/handleCalculatorButton';
 import { formatNumberWithThousands } from '../../utils/formatCurrency';
 
-
 const CalculatorFrame: FC<TCaculatorFrame> = ({
     inputValue,
     handleInputChange
